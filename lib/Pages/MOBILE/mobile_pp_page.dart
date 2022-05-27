@@ -130,7 +130,7 @@ class _MobilePPPageState extends State<MobilePPPage> {
                 ),
                 //制定日
                 Text(
-                  "制定日：1621年3月10日",
+                  "制定日：2022年4月1日",
                   style: TextStyle(color: Colors.white.withOpacity(0.5)),
                 ),
               ],

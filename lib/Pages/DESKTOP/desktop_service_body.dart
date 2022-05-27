@@ -229,10 +229,12 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
 
         buildAppLink(
             image: "assets/app/apek_app/apek_logo.png",
-            appName: "Apek Legends(Playストア)",
-            onClick: _apekAppURL,
-            backColor: Colors.blue,
-            sideColor: Colors.white,
+            appName: "Apek Legends(プレイストア)",
+            onClick: apekAndroidURL,
+            gradC1: Color.fromARGB(255, 21, 218, 119),
+            gradC2: Color.fromARGB(255, 219, 125, 11),
+            shadowColor:
+                const Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
             textColor: Colors.white),
 
         const SizedBox(
@@ -272,6 +274,19 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
         ),
 
         const SizedBox(
+          height: 80,
+        ),
+
+        buildAppLink(
+            image: "assets/app/apps_icon/esc_hospital_logo.png",
+            appName: "脱出ゲーム -廃病院-(Apple Store)",
+            onClick: escHospitalAppIOSURL,
+            gradC1: Color.fromARGB(255, 24, 203, 247),
+            gradC2: Color.fromARGB(255, 3, 64, 231),
+            shadowColor: Color.fromARGB(255, 255, 255, 255).withOpacity(.5),
+            textColor: Colors.white),
+
+        const SizedBox(
           height: 60,
         ),
 
@@ -279,10 +294,12 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
           key: widget.escHospitalKey,
           child: buildAppLink(
               image: "assets/app/apps_icon/esc_hospital_logo.png",
-              appName: "脱出ゲーム -廃病院-(Playストア)",
-              onClick: _escHospitalAppURL,
-              backColor: Colors.blue,
-              sideColor: Colors.white,
+              appName: "脱出ゲーム -廃病院-(プレイストア)",
+              onClick: escHospitalAndroidURL,
+              gradC1: Color.fromARGB(255, 21, 218, 119),
+              gradC2: Color.fromARGB(255, 219, 125, 11),
+              shadowColor:
+                  const Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
               textColor: Colors.white),
         ),
 
@@ -328,10 +345,12 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
           key: widget.escSchoolKey,
           child: buildAppLink(
               image: "assets/app/apps_icon/esc_logo.png",
-              appName: "脱出ゲーム -学校-(Playストア)",
-              onClick: _escAppURL,
-              backColor: Colors.blue,
-              sideColor: Colors.white,
+              appName: "脱出ゲーム -学校-(プレイストア)",
+              onClick: escSchoolAndroidURL,
+              gradC1: Color.fromARGB(255, 21, 218, 119),
+              gradC2: Color.fromARGB(255, 219, 125, 11),
+              shadowColor:
+                  const Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
               textColor: Colors.white),
         ),
 
@@ -375,10 +394,12 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
           key: widget.otherGameAppKey,
           child: buildAppLink(
               image: "assets/app/apps_icon/foom_logo.png",
-              appName: "フーマの大冒険(Playストア)",
-              onClick: _foomAppURL,
-              backColor: Colors.blue,
-              sideColor: Colors.white,
+              appName: "フーマの大冒険(プレイストア)",
+              onClick: foomAndroidURL,
+              gradC1: Color.fromARGB(255, 21, 218, 119),
+              gradC2: Color.fromARGB(255, 219, 125, 11),
+              shadowColor:
+                  const Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
               textColor: Colors.white),
         ),
 
@@ -388,10 +409,12 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
 
         buildAppLink(
             image: "assets/app/apps_icon/ozisan.png",
-            appName: "おじさんで積み木(Playストア)",
-            onClick: _ozisanAppURL,
-            backColor: Colors.blue,
-            sideColor: Colors.white,
+            appName: "おじさんで積み木(プレイストア)",
+            onClick: ozisanAndroidURL,
+            gradC1: Color.fromARGB(255, 21, 218, 119),
+            gradC2: Color.fromARGB(255, 219, 125, 11),
+            shadowColor:
+                const Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
             textColor: Colors.white),
 
         const SizedBox(height: 60),
@@ -400,10 +423,12 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
           key: widget.kouyakoudouKey,
           child: buildAppLink(
               image: "assets/app/apps_icon/fps_logo.png",
-              appName: "荒野行動(Playストア)",
-              onClick: _fpsAppURL,
-              backColor: Colors.blue,
-              sideColor: Colors.white,
+              appName: "荒野行動(プレイストア)",
+              onClick: fpsAndroidURL,
+              gradC1: Color.fromARGB(255, 21, 218, 119),
+              gradC2: Color.fromARGB(255, 219, 125, 11),
+              shadowColor:
+                  const Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
               textColor: Colors.white),
         ),
 
@@ -411,10 +436,12 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
 
         buildAppLink(
             image: "assets/app/apps_icon/hcasual.png",
-            appName: "スタックボール(Playストア)",
-            onClick: _ozisanAppURL,
-            backColor: Colors.blue,
-            sideColor: Colors.white,
+            appName: "スタックボール(プレイストア)",
+            onClick: stackBallAndroidURL,
+            gradC1: Color.fromARGB(255, 21, 218, 119),
+            gradC2: Color.fromARGB(255, 219, 125, 11),
+            shadowColor:
+                const Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
             textColor: Colors.white),
 
         const SizedBox(height: 100),
@@ -441,32 +468,52 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
         //翻訳アプリ androi
         buildAppLink(
             image: "assets/app/apps_icon/translation.png",
-            appName: "翻訳アプリ(Playストア)",
-            onClick: _translateAppURL,
-            backColor: const Color.fromARGB(95, 242, 58, 207),
-            sideColor: Colors.white,
+            appName: "翻訳アプリ(プレイストア)",
+            onClick: translateAppAndroidURL,
+            gradC1: Color.fromARGB(255, 21, 218, 119),
+            gradC2: Color.fromARGB(255, 219, 125, 11),
+            shadowColor:
+                const Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
             textColor: Colors.white),
+
+        const SizedBox(height: 60),
+
+        SizedBox(child: Image.asset("assets/app/other_game/trans.png")),
+
+        const SizedBox(height: 60),
 
         Container(
           key: widget.memoKey,
           child: buildAppLink(
               image: "assets/app/apps_icon/memo_logo.png",
-              appName: "メモ帳アプリ(Playストア)",
-              onClick: _memoAppURL,
-              backColor: Colors.blue,
-              sideColor: Colors.white,
+              appName: "メモ帳アプリ(プレイストア)",
+              onClick: memoAppAndroidURL,
+              gradC1: Color.fromARGB(255, 21, 218, 119),
+              gradC2: Color.fromARGB(255, 219, 125, 11),
+              shadowColor:
+                  const Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
               textColor: Colors.white),
         ),
 
         const SizedBox(height: 60),
 
+        SizedBox(child: Image.asset("assets/app/other_game/memo.png")),
+
+        const SizedBox(height: 60),
+
         buildAppLink(
             image: "assets/app/apps_icon/ps_logo.png",
-            appName: "パスワード管理(Playストア)",
-            onClick: _ps_memoAppURL,
-            backColor: Colors.blue,
-            sideColor: Colors.white,
+            appName: "パスワード管理(プレイストア)",
+            onClick: psportAppAndroidURL,
+            gradC1: Color.fromARGB(255, 21, 218, 119),
+            gradC2: Color.fromARGB(255, 219, 125, 11),
+            shadowColor:
+                const Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
             textColor: Colors.white),
+
+        const SizedBox(height: 60),
+
+        SizedBox(child: Image.asset("assets/app/other_game/pass.png")),
 
         const SizedBox(height: 60),
 
@@ -475,10 +522,12 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
           key: widget.okgoogleKey,
           child: buildAppLink(
               image: "assets/app/apps_icon/ai_g_logo.png",
-              appName: "Ok Googleさん(Playストア)",
-              onClick: _okGoogleApp,
-              backColor: Colors.blue,
-              sideColor: Colors.white,
+              appName: "Ok Googleさん(プレイストア)",
+              onClick: okGoogleAndroidURL,
+              gradC1: Color.fromARGB(255, 21, 218, 119),
+              gradC2: Color.fromARGB(255, 219, 125, 11),
+              shadowColor:
+                  const Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
               textColor: Colors.white),
         ),
 
@@ -490,68 +539,12 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
         buildAppLink(
             image: "assets/app/apps_icon/ai_g_logo.png",
             appName: "OK Google -English版-",
-            onClick: _okGoogleEnglishApp,
-            backColor: Colors.blue,
-            sideColor: Colors.white,
+            onClick: okGoogleEnglishAndroidURL,
+            gradC1: Color.fromARGB(255, 21, 218, 119),
+            gradC2: Color.fromARGB(255, 219, 125, 11),
+            shadowColor:
+                const Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
             textColor: Colors.white),
-
-        // const SizedBox(height: 100),
-
-        // const Text(
-        //   "音源制作",
-        //   style: TextStyle(
-        //       fontSize: 40, color: Colors.white, fontFamily: "sawarabi"),
-        // ),
-
-        // const SizedBox(height: 100),
-
-        // Row(
-        //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-        //   children: [
-        //     Column(
-        //       children: [
-        //         Container(
-        //           height: 180,
-        //           width: 320,
-        //           child: YoutubePlayerControllerProvider(
-        //             controller: _controller4,
-        //             child: const YoutubePlayerIFrame(
-        //               aspectRatio: 16 / 9,
-        //             ),
-        //           ),
-        //         ),
-        //         const Text(
-        //           "[Free] The Lightning Core",
-        //           style: TextStyle(
-        //               fontFamily: "shadows",
-        //               fontSize: 18,
-        //               fontWeight: FontWeight.bold),
-        //         )
-        //       ],
-        //     ),
-        //     Column(
-        //       children: [
-        //         Container(
-        //           height: 180,
-        //           width: 320,
-        //           child: YoutubePlayerControllerProvider(
-        //             controller: _controller5,
-        //             child: const YoutubePlayerIFrame(
-        //               aspectRatio: 16 / 9,
-        //             ),
-        //           ),
-        //         ),
-        //         const Text(
-        //           "[Free] The Lightning Core",
-        //           style: TextStyle(
-        //               fontFamily: "shadows",
-        //               fontSize: 18,
-        //               fontWeight: FontWeight.bold),
-        //         )
-        //       ],
-        //     ),
-        //   ],
-        // ),
 
         const SizedBox(height: 100),
       ],
@@ -658,8 +651,9 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
           {required String image,
           required String appName,
           required Function onClick,
-          required Color backColor,
-          required Color sideColor,
+          required Color gradC1,
+          required Color gradC2,
+          required Color shadowColor,
           required Color textColor}) =>
       Padding(
         padding: const EdgeInsets.only(top: 20),
@@ -672,7 +666,8 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
               height: 80,
               width: 550,
               child: Container(
-                decoration: buildBoxDecration(10),
+                decoration:
+                    appButtonBoxDecration(10, gradC1, gradC2, shadowColor),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 7.0),
                   child: Row(
@@ -695,7 +690,7 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
                             style: TextStyle(
                                 fontFamily: "kaisei",
                                 color: textColor,
-                                fontSize: 20,
+                                fontSize: 28,
                                 decoration: TextDecoration.underline)),
                       )
                     ],
@@ -720,71 +715,6 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
 
   void previous2() =>
       controller2.previousPage(duration: const Duration(seconds: 1));
-
-  void _cookAppURL() async => await canLaunch(cookApp)
-      ? await launch(cookApp)
-      : throw 'Could not launch $cookApp';
-
-  void _cookAppleAppURL() async => await canLaunch(cookAppleApp)
-      ? await launch(cookAppleApp)
-      : throw 'Could not launch $cookAppleApp';
-
-  Future<void> _translateAppURL() async => await canLaunch(translateApp)
-      ? await launch(translateApp)
-      : throw 'Could not launch $translateApp';
-
-  Future<void> _okGoogleApp() async => await canLaunch(okGoogleApp)
-      ? await launch(okGoogleApp)
-      : throw 'Could not launch $okGoogleApp';
-
-  Future<void> _okGoogleEnglishApp() async =>
-      await canLaunch(okGoogleEnglishApp)
-          ? await launch(okGoogleEnglishApp)
-          : throw 'Could not launch $okGoogleEnglishApp';
-
-  Future<void> _dotURL() async => await canLaunch(dotSwordURL)
-      ? await launch(dotSwordURL)
-      : throw 'Could not launch $dotSwordURL';
-
-  Future<void> _memoAppURL() async => await canLaunch(memoApp)
-      ? await launch(memoApp)
-      : throw 'Could not launch $memoApp';
-
-  Future<void> _ps_memoAppURL() async => await canLaunch(psPortalApp)
-      ? await launch(psPortalApp)
-      : throw 'Could not launch $psPortalApp';
-
-  Future<void> _apekAppURL() async => await canLaunch(apekApp)
-      ? await launch(apekApp)
-      : throw 'Could not launch $apekApp';
-
-  Future<void> _fpsAppURL() async => await canLaunch(fpsApp)
-      ? await launch(fpsApp)
-      : throw 'Could not launch $fpsApp';
-
-  Future<void> _foomAppURL() async => await canLaunch(foomApp)
-      ? await launch(foomApp)
-      : throw 'Could not launch $foomApp';
-
-  Future<void> _ozisanAppURL() async => await canLaunch(ozisanApp)
-      ? await launch(ozisanApp)
-      : throw 'Could not launch $ozisanApp';
-
-  Future<void> _escAppURL() async => await canLaunch(escApp)
-      ? await launch(escApp)
-      : throw 'Could not launch $escApp';
-
-  Future<void> _escHospitalAppURL() async => await canLaunch(escHospitalApp)
-      ? await launch(escHospitalApp)
-      : throw 'Could not launch $escHospitalApp';
-
-  Future<void> _stackBallAppURL() async => await canLaunch(stackBallApp)
-      ? await launch(stackBallApp)
-      : throw 'Could not launch $stackBallApp';
-
-  // void _chatAppURL() async => await canLaunch(chatApp)
-  //     ? await launch(chatApp)
-  //     : throw 'Could not launch $chatApp';
 
   Widget buildImage(String appImage) {
     return Padding(

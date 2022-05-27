@@ -29,43 +29,61 @@ class _MobileMinGamePageState extends State<MobileMinGamePage> {
                 ),
                 buildAppLink(
                     image: "assets/app/apps_icon/foom_logo.png",
-                    appName: "フーマの大冒険\n(Android用)",
-                    onClick: _foomAppURL,
-                    backColor: Colors.blue,
-                    sideColor: Colors.white,
+                    appName: "フーマ冒険\n(Apple Store)",
+                    onClick: foomAppIOSURL,
+                    gradC1: Color.fromARGB(255, 24, 203, 247),
+                    gradC2: Color.fromARGB(255, 3, 64, 231),
+                    shadowColor: const Color.fromARGB(255, 236, 173, 102)
+                        .withOpacity(.5),
                     textColor: Colors.white),
-                const SizedBox(
-                  height: 80,
-                ),
-                Image.asset("assets/app/other_game/fo.png"),
                 const SizedBox(
                   height: 80,
                 ),
                 buildAppLink(
-                    image: "assets/app/other_game/fo.png",
-                    appName: "おじさんで積み木\n(Android用)",
-                    onClick: _ozisanAppURL,
-                    backColor: Colors.blue,
-                    sideColor: Colors.white,
+                    image: "assets/app/apps_icon/foom_logo.png",
+                    appName: "フーマの大冒険\n(プレイストア)",
+                    onClick: foomAndroidURL,
+                    gradC1: Color.fromARGB(255, 21, 218, 119),
+                    gradC2: Color.fromARGB(255, 219, 125, 11),
+                    shadowColor: const Color.fromARGB(255, 107, 224, 253)
+                        .withOpacity(.5),
                     textColor: Colors.white),
                 const SizedBox(
                   height: 80,
                 ),
-                Image.asset("assets/app/other_game/ozi.png"),
+                Image.asset(height: 400, "assets/app/other_game/foom.png"),
+                const SizedBox(
+                  height: 80,
+                ),
+                buildAppLink(
+                    image: "assets/app/apps_icon/ozisan.png",
+                    appName: "おじさんで積み木\n(プレイストア)",
+                    onClick: ozisanAndroidURL,
+                    gradC1: Color.fromARGB(255, 21, 218, 119),
+                    gradC2: Color.fromARGB(255, 219, 125, 11),
+                    shadowColor: const Color.fromARGB(255, 107, 224, 253)
+                        .withOpacity(.5),
+                    textColor: Colors.white),
+                const SizedBox(
+                  height: 80,
+                ),
+                Image.asset(height: 400, "assets/app/other_game/ozitumiki.png"),
                 const SizedBox(
                   height: 80,
                 ),
                 buildAppLink(
                     image: "assets/app/apps_icon/hcasual.png",
-                    appName: "スタックボール\n(Android用)",
-                    onClick: _ozisanAppURL,
-                    backColor: Colors.blue,
-                    sideColor: Colors.white,
+                    appName: "スタックボール\n(プレイストア)",
+                    onClick: stackBallAndroidURL,
+                    gradC1: Color.fromARGB(255, 21, 218, 119),
+                    gradC2: Color.fromARGB(255, 219, 125, 11),
+                    shadowColor: const Color.fromARGB(255, 107, 224, 253)
+                        .withOpacity(.5),
                     textColor: Colors.white),
                 const SizedBox(
                   height: 80,
                 ),
-                Image.asset("assets/app/apek_app/apek1.png"),
+                Image.asset(height: 400, "assets/app/other_game/stack.png"),
                 const SizedBox(
                   height: 100,
                 ),
@@ -81,8 +99,9 @@ class _MobileMinGamePageState extends State<MobileMinGamePage> {
           {required String image,
           required String appName,
           required Function onClick,
-          required Color backColor,
-          required Color sideColor,
+          required Color gradC1,
+          required Color gradC2,
+          required Color shadowColor,
           required Color textColor}) =>
       Padding(
         padding: const EdgeInsets.only(top: 20),
@@ -94,7 +113,8 @@ class _MobileMinGamePageState extends State<MobileMinGamePage> {
             height: 75,
             width: 300,
             child: Container(
-              decoration: buildBoxDecration(10),
+              decoration:
+                  appButtonBoxDecration(10, gradC1, gradC2, shadowColor),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 7.0),
                 child: Row(
@@ -127,18 +147,6 @@ class _MobileMinGamePageState extends State<MobileMinGamePage> {
           ),
         ),
       );
-
-  Future<void> _foomAppURL() async => await canLaunch(foomApp)
-      ? await launch(foomApp)
-      : throw 'Could not launch $foomApp';
-
-  Future<void> _ozisanAppURL() async => await canLaunch(ozisanApp)
-      ? await launch(ozisanApp)
-      : throw 'Could not launch $ozisanApp';
-
-  Future<void> _stackBallAppURL() async => await canLaunch(stackBallApp)
-      ? await launch(stackBallApp)
-      : throw 'Could not launch $stackBallApp';
 
   Widget buildImage(String imageName) {
     return Padding(

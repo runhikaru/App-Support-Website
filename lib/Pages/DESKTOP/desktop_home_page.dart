@@ -111,6 +111,7 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         elevation: 25,
+        automaticallyImplyLeading: false,
         title: const Text(
           "お問い合わせ",
           style: TextStyle(
@@ -132,11 +133,11 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
             ],
             gradient: const LinearGradient(
               colors: [
-                Color.fromARGB(96, 9, 119, 182),
-                Color.fromARGB(255, 41, 10, 180),
+                Color.fromARGB(255, 24, 203, 247),
+                Color.fromARGB(255, 61, 1, 126),
               ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
             ),
           ),
         ),
@@ -221,10 +222,10 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
                             callback: scrollToItem2,
                             appName: "Apek",
                             description: "FPS"),
-                        ScrollToItem(
-                            callback: scrollToItem3,
-                            appName: "Apek",
-                            description: "FPS"),
+                        // ScrollToItem(
+                        //     callback: scrollToItem3,
+                        //     appName: "Apek",
+                        //     description: "FPS"),
                         ScrollToItem(
                             callback: scrollToItem4,
                             appName: "脱出ゲーム",
@@ -282,7 +283,7 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
             Container(
               height: 80,
               decoration: BoxDecoration(
-                  color: Colors.deepPurple.withOpacity(0.6),
+                  color: Color.fromARGB(255, 25, 29, 150).withOpacity(0.6),
                   border: Border.all(color: Colors.white.withOpacity(0.5))),
             ),
             Padding(

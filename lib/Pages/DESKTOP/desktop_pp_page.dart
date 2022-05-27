@@ -141,7 +141,7 @@ class _DesktopPPBodyState extends State<DesktopPPBody> {
               padding: const EdgeInsets.only(
                   left: 30, right: 20, top: 35, bottom: 15),
               child: Text(
-                "制定日：2021年3月10日",
+                "制定日：2022年4月1日",
                 style: TextStyle(color: Colors.white.withOpacity(.5)),
               ),
             ),

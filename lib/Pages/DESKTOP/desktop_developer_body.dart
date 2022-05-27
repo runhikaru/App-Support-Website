@@ -50,6 +50,20 @@ class _DesktopDeveloperBodyState extends State<DesktopDeveloperBody> {
             buildCard(title: "サウンド・ビート作曲", description: "BandLab・MPC Beat"),
           ],
         ),
+
+        const SizedBox(height: 150),
+        const Divider(
+          color: Colors.white,
+          thickness: 2,
+        ),
+        Align(
+            alignment: Alignment.center,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              child: Text("(c) 2021 MHikaru inc.",
+                  style: TextStyle(
+                      fontSize: 13, color: Colors.white.withOpacity(0.5))),
+            ))
       ],
     );
   }

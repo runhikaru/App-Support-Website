@@ -25,8 +25,10 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'アプリサポートウェブサイト',
-     theme: ThemeData(appBarTheme: AppBarTheme(iconTheme: IconThemeData(size: 30,color: Colors.white))),
-      home: WelcomePage(),
+      theme: ThemeData(
+          appBarTheme: const AppBarTheme(
+              iconTheme: IconThemeData(size: 30, color: Colors.white))),
+      home: const WelcomePage(),
     );
   }
 }
@@ -62,7 +64,7 @@ class _WelcomePageState extends State<WelcomePage>
             SizedBox(
               child: DefaultTextStyle(
                 style: const TextStyle(
-                    color: Colors.red,
+                    color: Colors.black,
                     fontSize: 100,
                     fontFamily: "VujahdayScript"),
                 child: AnimatedTextKit(

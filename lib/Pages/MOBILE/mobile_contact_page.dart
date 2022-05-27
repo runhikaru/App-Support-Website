@@ -75,6 +75,7 @@ class _MobileContactPageState extends State<MobileContactPage> {
                         ),
                         child: Column(
                           children: [
+                             const SizedBox(height:70),
                             // Mail
                             buildTextField(
                                 title: 'お名前',
@@ -148,6 +149,8 @@ class _MobileContactPageState extends State<MobileContactPage> {
                                     ),
                                   ),
                                 )),
+
+                                const SizedBox(height:70)
                           ],
                         ),
                       );

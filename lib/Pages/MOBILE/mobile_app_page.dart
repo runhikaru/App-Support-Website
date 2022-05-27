@@ -1,10 +1,8 @@
 import 'package:app_support_website/utils.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class MobileAppPage extends StatefulWidget {
   const MobileAppPage({Key? key}) : super(key: key);
@@ -18,18 +16,17 @@ class _MobileAppPageState extends State<MobileAppPage> {
 
   final controller = CarouselController();
   int activeIndex = 0;
-  final img_apek = [
-    'assets/app/apek_app/apek1.png',
-    'assets/app/apek_app/apek2.png',
-    'assets/app/apek_app/apek3.png',
-    'assets/app/apek_app/apek4.png',
+  final img_trans = [
+    'assets/app/other_game/trans.png',
+    'assets/app/other_game/trans.png',
+    'assets/app/other_game/trans.png',
   ];
 
   final controller2 = CarouselController();
   int activeIndex2 = 0;
-  final img_icons2 = [
-    'assets/app/memo_app/pp1.png',
-    'assets/app/memo_app/pp2.png',
+  final img_pass = [
+    'assets/app/other_game/pass.png',
+    'assets/app/other_game/pass2.png',
   ];
 
   @override
@@ -48,25 +45,27 @@ class _MobileAppPageState extends State<MobileAppPage> {
                 const SizedBox(
                   height: 100,
                 ),
-    
+
                 buildAppLink(
                     image: "assets/app/apps_icon/translation.png",
-                    appName: "翻訳アプリ\n(Android用)",
-                    onClick: _translateAppURL,
-                    backColor: Colors.blue,
-                    sideColor: Colors.white,
+                    appName: "翻訳アプリ\n(プレイストア)",
+                    onClick: translateAppAndroidURL,
+                    gradC1: Color.fromARGB(255, 21, 218, 119),
+                    gradC2: Color.fromARGB(255, 219, 125, 11),
+                    shadowColor: const Color.fromARGB(255, 107, 224, 253)
+                        .withOpacity(.5),
                     textColor: Colors.white),
-    
+
                 const SizedBox(
                   height: 80,
                 ),
-    
+
                 //画�?
                 Stack(
                   children: [
                     CarouselSlider.builder(
                       carouselController: controller,
-                      itemCount: img_apek.length,
+                      itemCount: img_trans.length,
                       options: CarouselOptions(
                           autoPlay: true,
                           aspectRatio: 2,
@@ -81,77 +80,57 @@ class _MobileAppPageState extends State<MobileAppPage> {
                             });
                           }),
                       itemBuilder: (ctx, index, realIndex) {
-                        final apekImg = img_apek[index];
+                        final apekImg = img_trans[index];
                         return buildImage(apekImg);
                       },
                     ),
                   ],
                 ),
-    
+
                 const SizedBox(
                   height: 80,
                 ),
-    
+
                 buildAppLink(
                     image: "assets/app/apps_icon/memo_logo.png",
-                    appName: "シンプルなメモ帳\n(Android用)",
-                    onClick: _memoAppURL,
-                    backColor: Colors.blue,
-                    sideColor: Colors.white,
+                    appName: "シンプルなメモ帳\n(プレイストア)",
+                    onClick: memoAppAndroidURL,
+                    gradC1: Color.fromARGB(255, 21, 218, 119),
+                    gradC2: Color.fromARGB(255, 219, 125, 11),
+                    shadowColor: const Color.fromARGB(255, 107, 224, 253)
+                        .withOpacity(.5),
                     textColor: Colors.white),
-    
+
                 const SizedBox(
                   height: 80,
                 ),
-    
-                //画�?
-                Stack(
-                  children: [
-                    CarouselSlider.builder(
-                      carouselController: controller2,
-                      itemCount: img_icons2.length,
-                      options: CarouselOptions(
-                          autoPlay: true,
-                          aspectRatio: 2,
-                          autoPlayAnimationDuration: const Duration(seconds: 2),
-                          height: 400,
-                          enlargeCenterPage: true,
-                          enlargeStrategy: CenterPageEnlargeStrategy.height,
-                          reverse: false,
-                          onPageChanged: (index, reason) {
-                            setState(() {
-                              activeIndex2 = index;
-                            });
-                          }),
-                      itemBuilder: (ctx, index, realIndex) {
-                        final fpsImg = img_icons2[index];
-                        return buildImage(fpsImg);
-                      },
-                    ),
-                  ],
-                ),
+
+                Image.asset(height: 400, "assets/app/other_game/memo.png"),
+
                 const SizedBox(
                   height: 80,
                 ),
-    
+
                 buildAppLink(
                     image: "assets/app/apps_icon/ps_logo.png",
-                    appName: "パスワード管理アプリ\n(Android用)",
-                    onClick: _ps_memoAppURL,
-                    backColor: Colors.blue,
-                    sideColor: Colors.white,
+                    appName: "パスワード管理アプリ\n(プレイストア)",
+                    onClick: psportAppAndroidURL,
+                    gradC1: Color.fromARGB(255, 21, 218, 119),
+                    gradC2: Color.fromARGB(255, 219, 125, 11),
+                    shadowColor: const Color.fromARGB(255, 107, 224, 253)
+                        .withOpacity(.5),
                     textColor: Colors.white),
-    
+
                 const SizedBox(
                   height: 80,
                 ),
-    
+
                 //画�?
                 Stack(
                   children: [
                     CarouselSlider.builder(
                       carouselController: controller2,
-                      itemCount: img_icons2.length,
+                      itemCount: img_pass.length,
                       options: CarouselOptions(
                           autoPlay: true,
                           aspectRatio: 2,
@@ -166,38 +145,42 @@ class _MobileAppPageState extends State<MobileAppPage> {
                             });
                           }),
                       itemBuilder: (ctx, index, realIndex) {
-                        final fpsImg = img_icons2[index];
+                        final fpsImg = img_pass[index];
                         return buildImage(fpsImg);
                       },
                     ),
                   ],
                 ),
-    
+
                 const SizedBox(
                   height: 80,
                 ),
                 //Ok Google kun androi
                 buildAppLink(
                     image: "assets/app/apps_icon/ai_g_logo.png",
-                    appName: "OK グーグル君\n(Android用)",
-                    onClick: _okGoogleApp,
-                    backColor: Colors.blue,
-                    sideColor: Colors.white,
+                    appName: "OK グーグル君\n(プレイストア)",
+                    onClick: okGoogleAndroidURL,
+                    gradC1: Color.fromARGB(255, 21, 218, 119),
+                    gradC2: Color.fromARGB(255, 219, 125, 11),
+                    shadowColor: const Color.fromARGB(255, 107, 224, 253)
+                        .withOpacity(.5),
                     textColor: Colors.white),
-    
+
                 const SizedBox(
                   height: 80,
                 ),
-    
+
                 //Ok Google kun androi English
                 buildAppLink(
                     image: "assets/app/apps_icon/ai_g_logo.png",
                     appName: "OK グーグル君\n-英語版-",
-                    onClick: _okGoogleEnglishApp,
-                    backColor: Colors.blue,
-                    sideColor: Colors.white,
+                    onClick: okGoogleEnglishAndroidURL,
+                    gradC1: Color.fromARGB(255, 21, 218, 119),
+                    gradC2: Color.fromARGB(255, 219, 125, 11),
+                    shadowColor: const Color.fromARGB(255, 107, 224, 253)
+                        .withOpacity(.5),
                     textColor: Colors.white),
-    
+
                 const SizedBox(
                   height: 100,
                 ),
@@ -213,8 +196,9 @@ class _MobileAppPageState extends State<MobileAppPage> {
           {required String image,
           required String appName,
           required Function onClick,
-          required Color backColor,
-          required Color sideColor,
+          required Color gradC1,
+          required Color gradC2,
+          required Color shadowColor,
           required Color textColor}) =>
       Padding(
         padding: const EdgeInsets.only(top: 20),
@@ -226,7 +210,8 @@ class _MobileAppPageState extends State<MobileAppPage> {
             height: 75,
             width: 300,
             child: Container(
-              decoration: buildBoxDecration(10),
+              decoration:
+                  appButtonBoxDecration(10, gradC1, gradC2, shadowColor),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 7.0),
                 child: Row(
@@ -317,27 +302,6 @@ class _MobileAppPageState extends State<MobileAppPage> {
   void previous() =>
       controller.previousPage(duration: const Duration(seconds: 1));
 
-  Future<void> _translateAppURL() async => await canLaunch(translateApp)
-      ? await launch(translateApp)
-      : throw 'Could not launch $translateApp';
-
-  Future<void> _okGoogleApp() async => await canLaunch(okGoogleApp)
-      ? await launch(okGoogleApp)
-      : throw 'Could not launch $okGoogleApp';
-
-  Future<void> _okGoogleEnglishApp() async =>
-      await canLaunch(okGoogleEnglishApp)
-          ? await launch(okGoogleEnglishApp)
-          : throw 'Could not launch $okGoogleEnglishApp';
-
-  Future<void> _memoAppURL() async => await canLaunch(memoApp)
-      ? await launch(memoApp)
-      : throw 'Could not launch $memoApp';
-
-  Future<void> _ps_memoAppURL() async => await canLaunch(psPortalApp)
-      ? await launch(psPortalApp)
-      : throw 'Could not launch $psPortalApp';
-
   Widget buildImage(String imageName) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 18.0),
@@ -354,7 +318,7 @@ class _MobileAppPageState extends State<MobileAppPage> {
   Widget buildIndicator1() {
     return AnimatedSmoothIndicator(
       activeIndex: activeIndex,
-      count: img_apek.length,
+      count: img_trans.length,
       onDotClicked: animateToSlide,
       duration: const Duration(seconds: 1),
       effect: const ExpandingDotsEffect(
