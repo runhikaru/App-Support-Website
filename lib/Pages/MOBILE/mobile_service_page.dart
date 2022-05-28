@@ -1,12 +1,13 @@
 import 'package:app_support_website/utils.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class MobileServicePage extends StatefulWidget {
   final GlobalKey topKey;
+  final bool drawerOpened;
 
-  const MobileServicePage({super.key, required this.topKey});
+  const MobileServicePage(
+      {super.key, required this.topKey, required this.drawerOpened});
 
   @override
   _MobileServicePageState createState() => _MobileServicePageState();
@@ -51,31 +52,36 @@ class _MobileServicePageState extends State<MobileServicePage> {
               height: 100,
             ),
 
-            Stack(
-              alignment: Alignment.center,
-              children: [
-                Container(
-                  height: 230,
-                  width: 490,
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.3),
-                    border: Border.all(
-                      color: Colors.white.withOpacity(0.7),
-                    ),
-                    borderRadius: BorderRadius.circular(10),
+            widget.drawerOpened
+                ? Container(
+                    height: 230,
+                    width: 490,
+                  )
+                : Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Container(
+                        height: 230,
+                        width: 490,
+                        decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.3),
+                          border: Border.all(
+                            color: Colors.white.withOpacity(0.7),
+                          ),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 200,
+                        child: YoutubePlayerControllerProvider(
+                          controller: _Ycontroller,
+                          child: const YoutubePlayerIFrame(
+                            aspectRatio: 16 / 9,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-                SizedBox(
-                  height: 200,
-                  child: YoutubePlayerControllerProvider(
-                    controller: _Ycontroller,
-                    child: const YoutubePlayerIFrame(
-                      aspectRatio: 16 / 9,
-                    ),
-                  ),
-                ),
-              ],
-            ),
 
             const SizedBox(
               height: 200,
@@ -319,36 +325,6 @@ class _MobileServicePageState extends State<MobileServicePage> {
             const SizedBox(
               height: 200,
             ),
-
-            // Stack(
-            //   alignment: Alignment.center,
-            //   children: [
-            //     Container(
-            //       height: 230,
-            //       width: 490,
-            //       decoration: BoxDecoration(
-            //         color: Colors.white.withOpacity(0.3),
-            //         border: Border.all(
-            //           color: Colors.white.withOpacity(0.7),
-            //         ),
-            //         borderRadius: BorderRadius.circular(10),
-            //       ),
-            //     ),
-            //     SizedBox(
-            //       height: 200,
-            //       child: YoutubePlayerControllerProvider(
-            //         controller: _Ycontroller3,
-            //         child: const YoutubePlayerIFrame(
-            //           aspectRatio: 16 / 9,
-            //         ),
-            //       ),
-            //     ),
-            //   ],
-            // ),
-
-            // const SizedBox(
-            //   height: 80,
-            // ),
 
             buildAppURLButton(
                 image: "assets/app/apps_icon/memo_logo.png",

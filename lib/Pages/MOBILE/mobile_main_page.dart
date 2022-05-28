@@ -10,14 +10,34 @@ import 'package:app_support_website/Pages/MOBILE/mobile_developer_page.dart';
 import 'package:app_support_website/Pages/MOBILE/mobile_pp_page.dart';
 
 import 'package:get/get.dart';
+import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
-class MobileMainPage extends StatelessWidget {
+class MobileMainPage extends StatefulWidget {
+  @override
+  State<MobileMainPage> createState() => _MobileMainPageState();
+}
+
+class _MobileMainPageState extends State<MobileMainPage> {
+  bool drawerOpened = false;
+
   final topKey = GlobalKey();
+
   Future scrollToItem() async {
     final context = topKey.currentContext;
     await Scrollable.ensureVisible(context!,
         alignment: 0.0, duration: const Duration(seconds: 2));
   }
+
+  final ScrollController scrollController = ScrollController();
+
+  final YoutubePlayerController _Ycontroller = YoutubePlayerController(
+    initialVideoId: 'RJsoKYYhvcM',
+    params: const YoutubePlayerParams(
+        startAt: Duration(seconds: 0),
+        showControls: true,
+        showFullscreenButton: true,
+        autoPlay: false),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +48,20 @@ class MobileMainPage extends StatelessWidget {
 
     return SafeArea(
       child: Scaffold(
+        onEndDrawerChanged: ((isOpened) {
+          setState(() {
+            print(isOpened);
+            drawerOpened = isOpened;
+          });
+
+          ;
+        }),
         backgroundColor: Colors.black,
+
+        //AppBar
         appBar: buildAppBar("サービス"),
+
+        //Drawer
         endDrawer: SizedBox(
           width: double.infinity,
           child: Drawer(
@@ -191,9 +223,12 @@ class MobileMainPage extends StatelessWidget {
             ),
           ),
         ),
+
         body: MobileServicePage(
           topKey: topKey,
+          drawerOpened: drawerOpened,
         ),
+
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.white.withOpacity(0.2),
           onPressed: scrollToItem,
