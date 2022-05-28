@@ -2,7 +2,6 @@ import 'package:app_support_website/utils.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class MobileAppPage extends StatefulWidget {
   const MobileAppPage({Key? key}) : super(key: key);
@@ -50,11 +49,9 @@ class _MobileAppPageState extends State<MobileAppPage> {
                     image: "assets/app/apps_icon/translation.png",
                     appName: "翻訳アプリ\n(プレイストア)",
                     onClick: translateAndroidURL,
-                    gradC1: Color.fromARGB(255, 21, 218, 119),
-                    gradC2: Color.fromARGB(255, 219, 125, 11),
-                    shadowColor: const Color.fromARGB(255, 107, 224, 253)
-                        .withOpacity(.5),
-                    apple: false,mobile: true,
+                    ios: false,
+                    apple: false,
+                    mobile: true,
                     textColor: Colors.white),
 
                 const SizedBox(
@@ -96,11 +93,9 @@ class _MobileAppPageState extends State<MobileAppPage> {
                     image: "assets/app/apps_icon/memo_logo.png",
                     appName: "シンプルなメモ帳\n(プレイストア)",
                     onClick: memoAndroidURL,
-                    gradC1: Color.fromARGB(255, 21, 218, 119),
-                    gradC2: Color.fromARGB(255, 219, 125, 11),
-                    shadowColor: const Color.fromARGB(255, 107, 224, 253)
-                        .withOpacity(.5),
-                    apple: false,mobile: true,
+                    ios: false,
+                    apple: false,
+                    mobile: true,
                     textColor: Colors.white),
 
                 const SizedBox(
@@ -117,11 +112,9 @@ class _MobileAppPageState extends State<MobileAppPage> {
                     image: "assets/app/apps_icon/ps_logo.png",
                     appName: "パスワード管理アプリ\n(プレイストア)",
                     onClick: psportAndroidURL,
-                    gradC1: Color.fromARGB(255, 21, 218, 119),
-                    gradC2: Color.fromARGB(255, 219, 125, 11),
-                    shadowColor: const Color.fromARGB(255, 107, 224, 253)
-                        .withOpacity(.5),
-                    apple: false,mobile: true,
+                    ios: false,
+                    apple: false,
+                    mobile: true,
                     textColor: Colors.white),
 
                 const SizedBox(
@@ -158,32 +151,28 @@ class _MobileAppPageState extends State<MobileAppPage> {
                 const SizedBox(
                   height: 80,
                 ),
-                //Ok Google kun androi
+                //Ok Google kun android
                 buildAppURLButton(
                     image: "assets/app/apps_icon/ai_g_logo.png",
                     appName: "OK グーグル君\n(プレイストア)",
                     onClick: okGoogleAndroidURL,
-                    gradC1: Color.fromARGB(255, 21, 218, 119),
-                    gradC2: Color.fromARGB(255, 219, 125, 11),
-                    shadowColor: const Color.fromARGB(255, 107, 224, 253)
-                        .withOpacity(.5),
-                    apple: false,mobile: true,
+                    ios: false,
+                    apple: false,
+                    mobile: true,
                     textColor: Colors.white),
 
                 const SizedBox(
                   height: 80,
                 ),
 
-                //Ok Google kun androi English
+                //Ok Google kun android English
                 buildAppURLButton(
                     image: "assets/app/apps_icon/ai_g_logo.png",
                     appName: "OK グーグル君\n-英語版-",
                     onClick: okGoogleEnglishAndroidURL,
-                    gradC1: Color.fromARGB(255, 21, 218, 119),
-                    gradC2: Color.fromARGB(255, 219, 125, 11),
-                    shadowColor: const Color.fromARGB(255, 107, 224, 253)
-                        .withOpacity(.5),
-                    apple: false,mobile: true,
+                    ios: false,
+                    apple: false,
+                    mobile: true,
                     textColor: Colors.white),
 
                 const SizedBox(

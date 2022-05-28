@@ -1,7 +1,6 @@
 import 'package:app_support_website/utils.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class MobilePopularGamePage extends StatefulWidget {
   const MobilePopularGamePage({Key? key}) : super(key: key);
@@ -43,10 +42,7 @@ class _MobilePopularGamePageState extends State<MobilePopularGamePage> {
                     image: "assets/app/apek_app/apek_logo.png",
                     appName: "Apek Legends\n(Apple Store)",
                     onClick: apekIOSURL,
-                    gradC1: Color.fromARGB(255, 24, 203, 247),
-                    gradC2: Color.fromARGB(255, 3, 64, 231),
-                    shadowColor: const Color.fromARGB(255, 236, 173, 102)
-                        .withOpacity(.5),
+                    ios: true,
                     apple: true,
                     mobile: true,
                     textColor: Colors.white),
@@ -59,10 +55,7 @@ class _MobilePopularGamePageState extends State<MobilePopularGamePage> {
                     image: "assets/app/apek_app/apek_logo.png",
                     appName: "Apek\n(プレイストア)",
                     onClick: escHospitalAndroidURL,
-                    gradC1: Color.fromARGB(255, 21, 218, 119),
-                    gradC2: Color.fromARGB(255, 219, 125, 11),
-                    shadowColor: const Color.fromARGB(255, 107, 224, 253)
-                        .withOpacity(.5),
+                    ios: false,
                     apple: false,
                     mobile: true,
                     textColor: Colors.white),
@@ -106,10 +99,7 @@ class _MobilePopularGamePageState extends State<MobilePopularGamePage> {
                     image: "assets/app/apps_icon/esc_hospital_logo.png",
                     appName: "脱出ゲーム -廃病院-\n(Apple Store)",
                     onClick: escHospitalIOSURL,
-                    gradC1: Color.fromARGB(255, 24, 203, 247),
-                    gradC2: Color.fromARGB(255, 3, 64, 231),
-                    shadowColor: const Color.fromARGB(255, 236, 173, 102)
-                        .withOpacity(.5),
+                    ios: true,
                     apple: true,
                     mobile: true,
                     textColor: Colors.white),
@@ -122,10 +112,7 @@ class _MobilePopularGamePageState extends State<MobilePopularGamePage> {
                     image: "assets/app/apps_icon/esc_hospital_logo.png",
                     appName: "脱出ゲーム -廃病院-\n(プレイストア)",
                     onClick: escSchoolAndroidURL,
-                    gradC1: Color.fromARGB(255, 21, 218, 119),
-                    gradC2: Color.fromARGB(255, 219, 125, 11),
-                    shadowColor: const Color.fromARGB(255, 107, 224, 253)
-                        .withOpacity(.5),
+                    ios: false,
                     apple: false,
                     mobile: true,
                     textColor: Colors.white),
@@ -147,10 +134,7 @@ class _MobilePopularGamePageState extends State<MobilePopularGamePage> {
                     image: "assets/app/apps_icon/esc_logo.png",
                     appName: "脱出ゲーム -学校の教室-\n(プレイストア)",
                     onClick: escSchoolAndroidURL,
-                    gradC1: Color.fromARGB(255, 21, 218, 119),
-                    gradC2: Color.fromARGB(255, 219, 125, 11),
-                    shadowColor: const Color.fromARGB(255, 107, 224, 253)
-                        .withOpacity(.5),
+                    ios: false,
                     apple: false,
                     mobile: true,
                     textColor: Colors.white),
@@ -162,7 +146,7 @@ class _MobilePopularGamePageState extends State<MobilePopularGamePage> {
                 SizedBox(
                     height: 400,
                     child:
-                        Image.asset("assets/app/other_game/escHospital.png")),
+                        Image.asset("assets/app/other_game/escSchool.png")),
 
                 const SizedBox(
                   height: 100,

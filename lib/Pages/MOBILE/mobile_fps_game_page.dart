@@ -2,7 +2,6 @@ import 'package:app_support_website/utils.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class MobileFPSGamePage extends StatefulWidget {
   const MobileFPSGamePage({Key? key}) : super(key: key);
@@ -53,10 +52,7 @@ class _MobileFPSGamePageState extends State<MobileFPSGamePage> {
                     image: "assets/app/apek_app/apek_logo.png",
                     appName: "Apek Legends\n(Apple Store)",
                     onClick: apekIOSURL,
-                    gradC1: Color.fromARGB(255, 24, 203, 247),
-                    gradC2: Color.fromARGB(255, 3, 64, 231),
-                    shadowColor: const Color.fromARGB(255, 236, 173, 102)
-                        .withOpacity(.5),
+                   ios: true,
                     apple: true,mobile: true,
                     textColor: Colors.white),
 
@@ -68,10 +64,7 @@ class _MobileFPSGamePageState extends State<MobileFPSGamePage> {
                     image: "assets/app/apek_app/apek_logo.png",
                     appName: "Apek Legends\n(プレイストア)",
                     onClick: apekAndroidURL,
-                    gradC1: Color.fromARGB(255, 21, 218, 119),
-                    gradC2: Color.fromARGB(255, 219, 125, 11),
-                    shadowColor: const Color.fromARGB(255, 107, 224, 253)
-                        .withOpacity(.5),
+                     ios: false,
                     apple: false,mobile: true,
                     textColor: Colors.white),
 
@@ -114,10 +107,7 @@ class _MobileFPSGamePageState extends State<MobileFPSGamePage> {
                     image: "assets/app/apps_icon/fps_logo.png",
                     appName: "荒野運動\n(プレイストア)",
                     onClick: fpsAndroidURL,
-                    gradC1: Color.fromARGB(255, 21, 218, 119),
-                    gradC2: Color.fromARGB(255, 219, 125, 11),
-                    shadowColor: const Color.fromARGB(255, 107, 224, 253)
-                        .withOpacity(.5),
+                      ios: false,
                     apple: false,mobile: true,
                     textColor: Colors.white),
 

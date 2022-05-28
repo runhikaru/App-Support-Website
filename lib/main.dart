@@ -45,7 +45,7 @@ class _WelcomePageState extends State<WelcomePage>
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 4), () async {
+    Timer(const Duration(seconds: 2), () async {
       Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(builder: (context) => const ResponsiveLayout()),
@@ -56,28 +56,40 @@ class _WelcomePageState extends State<WelcomePage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(
-              child: DefaultTextStyle(
-                style: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 100,
-                    fontFamily: "VujahdayScript"),
-                child: AnimatedTextKit(
-                  animatedTexts: [
-                    ScaleAnimatedText('Welcome'),
-                    ScaleAnimatedText('For'),
-                    ScaleAnimatedText('Developer'),
-                  ],
-                ),
+      body: Stack(
+        alignment: Alignment.center,
+        children: [
+          Container(
+            width: double.infinity,
+            height: double.infinity,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  Color.fromARGB(255, 205, 61, 42),
+                  Color.fromARGB(255, 206, 206, 22),
+                  Color.fromARGB(255, 0, 51, 217),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomCenter,
               ),
             ),
-          ],
-        ),
+          ),
+          SizedBox(
+            child: DefaultTextStyle(
+              style: const TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 100,
+                  fontFamily: "VujahdayScript"),
+              child: AnimatedTextKit(
+                animatedTexts: [
+                  ScaleAnimatedText('Hello'),
+                  ScaleAnimatedText('World'),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

@@ -94,8 +94,8 @@ AppBar buildAppBar(String title) {
       ],
       gradient: const LinearGradient(
         colors: [Color.fromRGBO(100, 232, 255, 1), Colors.deepPurple],
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
+        begin: Alignment.centerLeft,
+        end: Alignment.centerRight,
       ),
     )),
   );
@@ -125,9 +125,7 @@ Widget buildAppURLButton(
         {required String image,
         required String appName,
         required Function onClick,
-        required Color gradC1,
-        required Color gradC2,
-        required Color shadowColor,
+        required bool ios,
         required bool apple,
         required bool mobile,
         required Color textColor}) =>
@@ -146,7 +144,10 @@ Widget buildAppURLButton(
                     borderRadius: BorderRadius.circular(10),
                     boxShadow: [
                       BoxShadow(
-                        color: shadowColor,
+                        color: ios
+                            ? Color.fromARGB(255, 107, 224, 253).withOpacity(.5)
+                            : Color.fromARGB(255, 236, 173, 102)
+                                .withOpacity(.5),
                         spreadRadius: 5,
                         blurRadius: 7,
                         offset:
@@ -154,7 +155,15 @@ Widget buildAppURLButton(
                       ),
                     ],
                     gradient: LinearGradient(
-                      colors: [gradC1, gradC2],
+                      colors: ios
+                          ? [
+                              Color.fromARGB(255, 24, 203, 247),
+                              Color.fromARGB(255, 3, 64, 231),
+                            ]
+                          : [
+                              Color.fromARGB(255, 21, 218, 119),
+                              Color.fromARGB(255, 219, 125, 11),
+                            ],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                     ),
@@ -205,7 +214,11 @@ Widget buildAppURLButton(
                       borderRadius: BorderRadius.circular(10),
                       boxShadow: [
                         BoxShadow(
-                          color: shadowColor,
+                          color: ios
+                              ? Color.fromARGB(255, 107, 224, 253)
+                                  .withOpacity(.5)
+                              : Color.fromARGB(255, 236, 173, 102)
+                                  .withOpacity(.5),
                           spreadRadius: 5,
                           blurRadius: 7,
                           offset:
@@ -213,7 +226,15 @@ Widget buildAppURLButton(
                         ),
                       ],
                       gradient: LinearGradient(
-                        colors: [gradC1, gradC2],
+                        colors: ios
+                            ? [
+                                Color.fromARGB(255, 24, 203, 247),
+                                Color.fromARGB(255, 3, 64, 231),
+                              ]
+                            : [
+                                Color.fromARGB(255, 21, 218, 119),
+                                Color.fromARGB(255, 219, 125, 11),
+                              ],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),

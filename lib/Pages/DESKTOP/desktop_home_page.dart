@@ -284,7 +284,8 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
               height: 80,
               decoration: BoxDecoration(
                   color: Color.fromARGB(255, 25, 29, 150).withOpacity(0.6),
-                  border: Border.all(color: Colors.white.withOpacity(0.5))),
+                  border: Border.all(color: Colors.white.withOpacity(0.5)),
+                  borderRadius: BorderRadius.circular(4)),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 3),
@@ -321,7 +322,9 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 3),
           height: 40,
-          color: Colors.white.withOpacity(opacity),
+          decoration: BoxDecoration(
+              color: Colors.white.withOpacity(opacity),
+              borderRadius: BorderRadius.circular(4)),
           child: Align(
             alignment: Alignment.centerLeft,
             child: Text(
