@@ -79,7 +79,7 @@ class _WelcomePageState extends State<WelcomePage>
               style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
-                  fontSize: 100,
+                  fontSize: 120,
                   fontFamily: "VujahdayScript"),
               child: AnimatedTextKit(
                 animatedTexts: [

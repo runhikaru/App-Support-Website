@@ -51,7 +51,7 @@ class _DesktopDeveloperBodyState extends State<DesktopDeveloperBody> {
           ],
         ),
 
-        const SizedBox(height: 150),
+        const SizedBox(height: 100),
         const Divider(
           color: Colors.white,
           thickness: 2,

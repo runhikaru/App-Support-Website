@@ -45,31 +45,33 @@ class _MobileFPSGamePageState extends State<MobileFPSGamePage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(
-                  height: 100,
+                  height: 40,
                 ),
 
                 buildAppURLButton(
                     image: "assets/app/apek_app/apek_logo.png",
                     appName: "Apek Legends\n(Apple Store)",
                     onClick: apekIOSURL,
-                   ios: true,
-                    apple: true,mobile: true,
+                    ios: true,
+                    apple: true,
+                    mobile: true,
                     textColor: Colors.white),
 
                 const SizedBox(
-                  height: 80,
+                  height: 40,
                 ),
 
                 buildAppURLButton(
                     image: "assets/app/apek_app/apek_logo.png",
                     appName: "Apek Legends\n(プレイストア)",
                     onClick: apekAndroidURL,
-                     ios: false,
-                    apple: false,mobile: true,
+                    ios: false,
+                    apple: false,
+                    mobile: true,
                     textColor: Colors.white),
 
                 const SizedBox(
-                  height: 80,
+                  height: 40,
                 ),
 
                 //画�?
@@ -81,8 +83,9 @@ class _MobileFPSGamePageState extends State<MobileFPSGamePage> {
                       options: CarouselOptions(
                           autoPlay: true,
                           aspectRatio: 2,
+                          autoPlayCurve: Curves.easeInExpo,
                           autoPlayAnimationDuration: const Duration(seconds: 2),
-                          height: 400,
+                          height: 270,
                           enlargeCenterPage: true,
                           enlargeStrategy: CenterPageEnlargeStrategy.height,
                           reverse: false,
@@ -100,19 +103,20 @@ class _MobileFPSGamePageState extends State<MobileFPSGamePage> {
                 ),
 
                 const SizedBox(
-                  height: 80,
+                  height: 200,
                 ),
 
                 buildAppURLButton(
                     image: "assets/app/apps_icon/fps_logo.png",
                     appName: "荒野運動\n(プレイストア)",
                     onClick: fpsAndroidURL,
-                      ios: false,
-                    apple: false,mobile: true,
+                    ios: false,
+                    apple: false,
+                    mobile: true,
                     textColor: Colors.white),
 
                 const SizedBox(
-                  height: 80,
+                  height: 40,
                 ),
 
                 //画�?
@@ -124,8 +128,9 @@ class _MobileFPSGamePageState extends State<MobileFPSGamePage> {
                       options: CarouselOptions(
                           autoPlay: true,
                           aspectRatio: 2,
+                          autoPlayCurve: Curves.easeInExpo,
                           autoPlayAnimationDuration: const Duration(seconds: 2),
-                          height: 400,
+                          height: 270,
                           enlargeCenterPage: true,
                           enlargeStrategy: CenterPageEnlargeStrategy.height,
                           reverse: false,
@@ -143,97 +148,13 @@ class _MobileFPSGamePageState extends State<MobileFPSGamePage> {
                 ),
 
                 const SizedBox(
-                  height: 100,
+                  height: 200,
                 ),
               ],
             ),
           ),
         ),
       ),
-    );
-  }
-
-  Widget buildButton(Function op) => Padding(
-        padding: const EdgeInsets.only(top: 300),
-        child: Row(
-          children: [
-            Container(
-              width: 90,
-              height: 90,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(40),
-                  gradient: const LinearGradient(
-                      begin: Alignment.bottomLeft,
-                      end: Alignment.topRight,
-                      colors: [
-                        Colors.deepOrangeAccent,
-                        Colors.pinkAccent,
-                        Colors.yellowAccent
-                      ])),
-              child: IconButton(
-                  onPressed: previous,
-                  icon: const Icon(
-                    Icons.arrow_back,
-                    size: 60,
-                    color: Colors.white,
-                  )),
-            ),
-            const Spacer(),
-            Container(
-              width: 90,
-              height: 90,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(40),
-                  gradient: const LinearGradient(
-                      begin: Alignment.bottomLeft,
-                      end: Alignment.topRight,
-                      colors: [
-                        Colors.deepOrangeAccent,
-                        Colors.pinkAccent,
-                        Colors.yellowAccent
-                      ])),
-              child: IconButton(
-                  onPressed: () {
-                    op();
-                  },
-                  icon: const Icon(Icons.arrow_forward,
-                      size: 60, color: Colors.white)),
-            )
-          ],
-        ),
-      );
-
-  void animateToSlide(int index) => controller.animateToPage(index);
-
-  void next() => controller.nextPage(duration: const Duration(seconds: 1));
-
-  void previous() =>
-      controller.previousPage(duration: const Duration(seconds: 1));
-
-  Widget buildImage(String imageName) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 18.0),
-      child: Container(
-          decoration: const BoxDecoration(color: Colors.black),
-          width: double.infinity,
-          child: Image.asset(
-            imageName,
-            fit: BoxFit.contain,
-          )),
-    );
-  }
-
-  Widget buildIndicator1() {
-    return AnimatedSmoothIndicator(
-      activeIndex: activeIndex,
-      count: img_apek.length,
-      onDotClicked: animateToSlide,
-      duration: const Duration(seconds: 1),
-      effect: const ExpandingDotsEffect(
-          activeDotColor: Colors.orange,
-          dotColor: Colors.grey,
-          dotWidth: 20,
-          dotHeight: 20),
     );
   }
 }

@@ -35,7 +35,7 @@ class _MobileServicePageState extends State<MobileServicePage> {
           children: [
             Container(
               key: widget.topKey,
-              height: 100,
+              height: 40,
             ),
 
             const Align(
@@ -104,7 +104,7 @@ class _MobileServicePageState extends State<MobileServicePage> {
                 textColor: Colors.white),
 
             const SizedBox(
-              height: 80,
+              height: 40,
             ),
 
             buildAppURLButton(
@@ -117,18 +117,18 @@ class _MobileServicePageState extends State<MobileServicePage> {
                 textColor: Colors.white),
 
             const SizedBox(
-              height: 80,
+              height: 40,
             ),
 
             SizedBox(
-              height: 400,
+              height: 270,
               child: Image.asset(
                 "assets/app/apek_app/apek.png",
               ),
             ),
 
             const SizedBox(
-              height: 80,
+              height: 200,
             ),
 
             // buildAppURLButton(
@@ -165,7 +165,7 @@ class _MobileServicePageState extends State<MobileServicePage> {
                 textColor: Colors.white),
 
             const SizedBox(
-              height: 80,
+              height: 40,
             ),
 
             buildAppURLButton(
@@ -178,15 +178,15 @@ class _MobileServicePageState extends State<MobileServicePage> {
                 textColor: Colors.white),
 
             const SizedBox(
-              height: 80,
+              height: 40,
             ),
 
             SizedBox(
-                height: 400,
+                height: 270,
                 child: Image.asset("assets/app/other_game/escHospital.png")),
 
             const SizedBox(
-              height: 80,
+              height: 200,
             ),
 
             buildAppURLButton(
@@ -199,14 +199,15 @@ class _MobileServicePageState extends State<MobileServicePage> {
                 textColor: Colors.white),
 
             const SizedBox(
-              height: 80,
+              height: 40,
             ),
+
             SizedBox(
-                height: 400,
+                height: 270,
                 child: Image.asset("assets/app/other_game/escSchool.png")),
 
             const SizedBox(
-              height: 80,
+              height: 200,
             ),
 
             buildAppURLButton(
@@ -219,7 +220,7 @@ class _MobileServicePageState extends State<MobileServicePage> {
                 textColor: Colors.white),
 
             const SizedBox(
-              height: 80,
+              height: 40,
             ),
 
             buildAppURLButton(
@@ -232,14 +233,15 @@ class _MobileServicePageState extends State<MobileServicePage> {
                 textColor: Colors.white),
 
             const SizedBox(
-              height: 80,
+              height: 40,
             ),
+
             SizedBox(
-                height: 400,
+                height: 270,
                 child: Image.asset("assets/app/other_game/foom.png")),
 
             const SizedBox(
-              height: 80,
+              height: 200,
             ),
 
             buildAppURLButton(
@@ -252,14 +254,15 @@ class _MobileServicePageState extends State<MobileServicePage> {
                 textColor: Colors.white),
 
             const SizedBox(
-              height: 80,
+              height: 40,
             ),
+
             SizedBox(
-                height: 400,
+                height: 270,
                 child: Image.asset("assets/app/other_game/ozitumiki.png")),
 
             const SizedBox(
-              height: 80,
+              height: 200,
             ),
 
             buildAppURLButton(
@@ -270,12 +273,12 @@ class _MobileServicePageState extends State<MobileServicePage> {
                 apple: false,
                 mobile: true,
                 textColor: Colors.white),
-
             const SizedBox(
-              height: 80,
+              height: 40,
             ),
+
             SizedBox(
-                height: 400,
+                height: 270,
                 child: Image.asset("assets/app/other_game/stack.png")),
 
             const SizedBox(
@@ -306,15 +309,15 @@ class _MobileServicePageState extends State<MobileServicePage> {
                 textColor: Colors.white),
 
             const SizedBox(
-              height: 80,
+              height: 40,
             ),
 
             SizedBox(
-                height: 400,
+                height: 270,
                 child: Image.asset("assets/app/other_game/trans.png")),
 
             const SizedBox(
-              height: 80,
+              height: 200,
             ),
 
             // Stack(
@@ -357,15 +360,15 @@ class _MobileServicePageState extends State<MobileServicePage> {
                 textColor: Colors.white),
 
             const SizedBox(
-              height: 80,
+              height: 40,
             ),
 
             SizedBox(
-                height: 400,
+                height: 270,
                 child: Image.asset("assets/app/other_game/memo.png")),
 
             const SizedBox(
-              height: 80,
+              height: 200,
             ),
 
             buildAppURLButton(
@@ -378,15 +381,15 @@ class _MobileServicePageState extends State<MobileServicePage> {
                 textColor: Colors.white),
 
             const SizedBox(
-              height: 80,
+              height: 40,
             ),
 
             SizedBox(
-                height: 400,
+                height: 270,
                 child: Image.asset("assets/app/other_game/pass.png")),
 
             const SizedBox(
-              height: 80,
+              height: 200,
             ),
             //Ok Google kun androi
             buildAppURLButton(
@@ -398,9 +401,7 @@ class _MobileServicePageState extends State<MobileServicePage> {
                 mobile: true,
                 textColor: Colors.white),
 
-            const SizedBox(height: 80),
-
-            const SizedBox(height: 150),
+            const SizedBox(height: 200),
 
             const Divider(
               color: Colors.white,

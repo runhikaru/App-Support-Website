@@ -7,24 +7,26 @@ import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 class DesktopServiceBody extends StatefulWidget {
   final GlobalKey serviceKey;
   final GlobalKey apekKey;
-  final GlobalKey kouyakoudouKey;
+  final GlobalKey fpsKey;
   final GlobalKey escSchoolKey;
   final GlobalKey escHospitalKey;
   final GlobalKey otherGameAppKey;
   final GlobalKey translationKey;
   final GlobalKey memoKey;
+  final GlobalKey idKey;
   final GlobalKey okgoogleKey;
 
   const DesktopServiceBody(
       {Key? key,
       required this.serviceKey,
       required this.apekKey,
-      required this.kouyakoudouKey,
+      required this.fpsKey,
       required this.escSchoolKey,
       required this.escHospitalKey,
       required this.otherGameAppKey,
       required this.translationKey,
       required this.memoKey,
+      required this.idKey,
       required this.okgoogleKey})
       : super(key: key);
 
@@ -36,6 +38,7 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
   final controller = CarouselController();
   int activeIndex = 0;
   final img_apek = [
+    'assets/app/apek_app/apek.png',
     'assets/app/apek_app/apek1.png',
     'assets/app/apek_app/apek2.png',
     'assets/app/apek_app/apek3.png',
@@ -44,14 +47,20 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
 
   final controller2 = CarouselController();
   int activeIndex2 = 0;
-  final img_fps = [
-    'assets/app/fps_app/fps1.png',
-    'assets/app/fps_app/fps2.png',
-    'assets/app/fps_app/fps3.png',
-    'assets/app/fps_app/fps4.png',
+  final img_trans = [
+    'assets/app/other_game/trans.png',
+    'assets/app/other_game/trans1.png',
+    'assets/app/other_game/trans2.png',
   ];
 
-  //縲繧ｯ繝?繧ｭ繝ｳ繧ｰ繧｢繝励Μhover
+  final controller3 = CarouselController();
+  int activeIndex3 = 0;
+  final img_psport = [
+    'assets/app/other_game/pass.png',
+    'assets/app/other_game/pass2.png',
+  ];
+
+  //hover
   BorderRadius? border;
   Color? color;
   double? height;
@@ -234,37 +243,35 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
         ),
 
         //Apek Image
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Stack(
-            children: [
-              CarouselSlider.builder(
-                carouselController: controller,
-                itemCount: img_apek.length,
-                options: CarouselOptions(
-                    autoPlay: true,
-                    aspectRatio: 2,
-                    autoPlayAnimationDuration: const Duration(seconds: 2),
-                    height: 400,
-                    enlargeCenterPage: true,
-                    enlargeStrategy: CenterPageEnlargeStrategy.height,
-                    reverse: false,
-                    onPageChanged: (index, reason) {
-                      setState(() {
-                        activeIndex = index;
-                      });
-                    }),
-                itemBuilder: (ctx, index, realIndex) {
-                  final apekImg = img_apek[index];
-                  return buildImage(apekImg);
-                },
-              ),
-            ],
-          ),
+        Stack(
+          children: [
+            CarouselSlider.builder(
+              carouselController: controller,
+              itemCount: img_apek.length,
+              options: CarouselOptions(
+                  autoPlay: true,
+                  aspectRatio: 2,
+                  autoPlayCurve: Curves.easeInExpo,
+                  autoPlayAnimationDuration: const Duration(seconds: 2),
+                  height: 400,
+                  enlargeCenterPage: true,
+                  enlargeStrategy: CenterPageEnlargeStrategy.height,
+                  reverse: false,
+                  onPageChanged: (index, reason) {
+                    setState(() {
+                      activeIndex = index;
+                    });
+                  }),
+              itemBuilder: (ctx, index, realIndex) {
+                final apekImg = img_apek[index];
+                return buildImage(apekImg);
+              },
+            ),
+          ],
         ),
 
         const SizedBox(
-          height: 60,
+          height: 250,
         ),
 
         Container(
@@ -297,10 +304,12 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
         ),
 
         // 廃病院 Image
-        SizedBox(child: Image.asset("assets/app/other_game/escHospital.png")),
+        SizedBox(
+            height: 400,
+            child: Image.asset("assets/app/other_game/escHospital.png")),
 
         const SizedBox(
-          height: 60,
+          height: 250,
         ),
 
         Container(
@@ -320,9 +329,11 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
         ),
 
         // 学校 Image
-        SizedBox(child: Image.asset("assets/app/other_game/escSchool.png")),
+        SizedBox(
+            height: 400,
+            child: Image.asset("assets/app/other_game/escSchool.png")),
 
-        const SizedBox(height: 60),
+        const SizedBox(height: 250),
 
         Container(
           key: widget.otherGameAppKey,
@@ -365,7 +376,7 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
         const SizedBox(height: 60),
 
         Container(
-          key: widget.kouyakoudouKey,
+          key: widget.fpsKey,
           child: buildAppURLButton(
               image: "assets/app/apps_icon/fps_logo.png",
               appName: "荒野行動(プレイストア)",
@@ -387,7 +398,7 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
             mobile: false,
             textColor: Colors.white),
 
-        const SizedBox(height: 100),
+        const SizedBox(height: 250),
 
         Container(
           key: widget.translationKey,
@@ -400,14 +411,6 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
 
         const SizedBox(height: 100),
 
-        //鄙ｻ險ｳ繧｢繝励Μ ios
-        // buildAppURLButton(
-        //     image: "assets/translation.png",
-        //     appName: "鄙ｻ險ｳ繧｢繝励Μ (iPhone逕ｨ)",
-        //     onClick: _translateAppleAppURL,
-        //     backColor: Colors.white,
-        //     sideColor: Colors.red,
-        //     textColor: Colors.blue),
         //翻訳アプリ androi
         buildAppURLButton(
             image: "assets/app/apps_icon/translation.png",
@@ -420,9 +423,35 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
 
         const SizedBox(height: 60),
 
-        SizedBox(child: Image.asset("assets/app/other_game/trans.png")),
+        //Translation Image
+        Stack(
+          children: [
+            CarouselSlider.builder(
+              carouselController: controller2,
+              itemCount: img_trans.length,
+              options: CarouselOptions(
+                  autoPlay: true,
+                  aspectRatio: 2,
+                  autoPlayCurve: Curves.easeInExpo,
+                  autoPlayAnimationDuration: const Duration(seconds: 2),
+                  height: 400,
+                  enlargeCenterPage: true,
+                  enlargeStrategy: CenterPageEnlargeStrategy.height,
+                  reverse: false,
+                  onPageChanged: (index, reason) {
+                    setState(() {
+                      activeIndex2 = index;
+                    });
+                  }),
+              itemBuilder: (ctx, index, realIndex) {
+                final transImg = img_trans[index];
+                return buildImage(transImg);
+              },
+            ),
+          ],
+        ),
 
-        const SizedBox(height: 60),
+        const SizedBox(height: 250),
 
         Container(
           key: widget.memoKey,
@@ -438,24 +467,54 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
 
         const SizedBox(height: 60),
 
-        SizedBox(child: Image.asset("assets/app/other_game/memo.png")),
+        SizedBox(
+            height: 400, child: Image.asset("assets/app/other_game/memo.png")),
+
+        const SizedBox(height: 250),
+
+        Container(
+          key: widget.idKey,
+          child: buildAppURLButton(
+              image: "assets/app/apps_icon/ps_logo.png",
+              appName: "パスワード管理(プレイストア)",
+              onClick: psportAndroidURL,
+              ios: false,
+              apple: false,
+              mobile: false,
+              textColor: Colors.white),
+        ),
 
         const SizedBox(height: 60),
 
-        buildAppURLButton(
-            image: "assets/app/apps_icon/ps_logo.png",
-            appName: "パスワード管理(プレイストア)",
-            onClick: psportAndroidURL,
-            ios: false,
-            apple: false,
-            mobile: false,
-            textColor: Colors.white),
+        //Ps Port Image
+        Stack(
+          children: [
+            CarouselSlider.builder(
+              carouselController: controller3,
+              itemCount: img_psport.length,
+              options: CarouselOptions(
+                  autoPlay: true,
+                  aspectRatio: 2,
+                  autoPlayCurve: Curves.easeInExpo,
+                  autoPlayAnimationDuration: const Duration(seconds: 2),
+                  height: 400,
+                  enlargeCenterPage: true,
+                  enlargeStrategy: CenterPageEnlargeStrategy.height,
+                  reverse: false,
+                  onPageChanged: (index, reason) {
+                    setState(() {
+                      activeIndex3 = index;
+                    });
+                  }),
+              itemBuilder: (ctx, index, realIndex) {
+                final psportImg = img_psport[index];
+                return buildImage(psportImg);
+              },
+            ),
+          ],
+        ),
 
-        const SizedBox(height: 60),
-
-        SizedBox(child: Image.asset("assets/app/other_game/pass.png")),
-
-        const SizedBox(height: 60),
+        const SizedBox(height: 250),
 
         //鄙ｻ險ｳ繧｢繝励Μ androi
         Container(
@@ -484,132 +543,8 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
             mobile: false,
             textColor: Colors.white),
 
-        const SizedBox(height: 100),
+        const SizedBox(height: 250),
       ],
-    );
-  }
-
-  Widget buildButton() => Padding(
-        padding: const EdgeInsets.only(top: 300),
-        child: Row(
-          children: [
-            Container(
-              width: 90,
-              height: 90,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(40),
-                  gradient: const LinearGradient(
-                      begin: Alignment.bottomLeft,
-                      end: Alignment.topRight,
-                      colors: [
-                        Colors.deepOrangeAccent,
-                        Colors.pinkAccent,
-                        Colors.yellowAccent
-                      ])),
-              child: IconButton(
-                  onPressed: previous,
-                  icon: const Icon(
-                    Icons.arrow_back,
-                    size: 60,
-                    color: Colors.white,
-                  )),
-            ),
-            const Spacer(),
-            Container(
-              width: 90,
-              height: 90,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(40),
-                  gradient: const LinearGradient(
-                      begin: Alignment.bottomLeft,
-                      end: Alignment.topRight,
-                      colors: [
-                        Colors.deepOrangeAccent,
-                        Colors.pinkAccent,
-                        Colors.yellowAccent
-                      ])),
-              child: IconButton(
-                  onPressed: next,
-                  icon: const Icon(Icons.arrow_forward,
-                      size: 60, color: Colors.white)),
-            )
-          ],
-        ),
-      );
-
-  Widget buildButton2() => Padding(
-        padding: const EdgeInsets.only(top: 300),
-        child: Row(
-          children: [
-            Container(
-              width: 90,
-              height: 90,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(40),
-                  gradient: const LinearGradient(
-                      begin: Alignment.bottomLeft,
-                      end: Alignment.topRight,
-                      colors: [
-                        Colors.deepOrangeAccent,
-                        Colors.pinkAccent,
-                        Colors.yellowAccent
-                      ])),
-              child: IconButton(
-                  onPressed: previous2,
-                  icon: const Icon(
-                    Icons.arrow_back,
-                    size: 60,
-                    color: Colors.white,
-                  )),
-            ),
-            const Spacer(),
-            Container(
-              width: 90,
-              height: 90,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(40),
-                  gradient: const LinearGradient(
-                      begin: Alignment.bottomLeft,
-                      end: Alignment.topRight,
-                      colors: [
-                        Colors.deepOrangeAccent,
-                        Colors.pinkAccent,
-                        Colors.yellowAccent
-                      ])),
-              child: IconButton(
-                  onPressed: next2,
-                  icon: const Icon(Icons.arrow_forward,
-                      size: 60, color: Colors.white)),
-            )
-          ],
-        ),
-      );
-
-  void animateToSlide(int index) => controller.animateToPage(index);
-
-  void next() => controller.nextPage(duration: const Duration(seconds: 1));
-
-  void previous() =>
-      controller.previousPage(duration: const Duration(seconds: 1));
-
-  void animateToSlide2(int index) => controller2.animateToPage(index);
-
-  void next2() => controller2.nextPage(duration: const Duration(seconds: 1));
-
-  void previous2() =>
-      controller2.previousPage(duration: const Duration(seconds: 1));
-
-  Widget buildImage(String appImage) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 15),
-      child: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 12),
-          color: Colors.black,
-          width: double.infinity,
-          child: Image.asset(
-            appImage,
-            fit: BoxFit.contain,
-          )),
     );
   }
 }

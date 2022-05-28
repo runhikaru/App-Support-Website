@@ -33,9 +33,9 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
         alignment: 0.0, duration: const Duration(seconds: 1));
   }
 
-  final kouyakoudouKey = GlobalKey();
+  final fpsKey = GlobalKey();
   Future scrollToItem3() async {
-    final context = kouyakoudouKey.currentContext;
+    final context = fpsKey.currentContext;
     await Scrollable.ensureVisible(context!,
         alignment: 0.0, duration: const Duration(seconds: 1));
   }
@@ -71,6 +71,13 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
   final memoKey = GlobalKey();
   Future scrollToItem9() async {
     final context = memoKey.currentContext;
+    await Scrollable.ensureVisible(context!,
+        alignment: 0.0, duration: const Duration(seconds: 1));
+  }
+
+  final idKey = GlobalKey();
+  Future scrollToItem13() async {
+    final context = idKey.currentContext;
     await Scrollable.ensureVisible(context!,
         alignment: 0.0, duration: const Duration(seconds: 1));
   }
@@ -170,12 +177,13 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
                     DesktopServiceBody(
                         serviceKey: serviceKey,
                         apekKey: apekKey,
-                        kouyakoudouKey: kouyakoudouKey,
+                        fpsKey: fpsKey,
                         escSchoolKey: escSchoolKey,
                         escHospitalKey: escHospitalKey,
                         otherGameAppKey: otherGameAppKey,
                         translationKey: translationKey,
                         memoKey: memoKey,
+                        idKey: idKey,
                         okgoogleKey: okgoogleKey),
                     DesktopContactBody(contactKey: contactKey),
                     DesktopDeveloperBody(
@@ -224,7 +232,7 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
                             description: "FPS"),
                         // ScrollToItem(
                         //     callback: scrollToItem3,
-                        //     appName: "Apek",
+                        //     appName: "FPS",
                         //     description: "FPS"),
                         ScrollToItem(
                             callback: scrollToItem4,
@@ -247,6 +255,10 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
                             callback: scrollToItem9,
                             appName: "メモ帳アプリ",
                             description: "メモ"),
+                        ScrollToItem(
+                            callback: scrollToItem13,
+                            appName: "ID管理アプリ",
+                            description: "仕事効率"),
                         ScrollToItem(
                             callback: scrollToItem10,
                             appName: "Ok Google君",

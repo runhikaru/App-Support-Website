@@ -1,7 +1,6 @@
 import 'package:app_support_website/utils.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class MobileAppPage extends StatefulWidget {
   const MobileAppPage({Key? key}) : super(key: key);
@@ -17,8 +16,8 @@ class _MobileAppPageState extends State<MobileAppPage> {
   int activeIndex = 0;
   final img_trans = [
     'assets/app/other_game/trans.png',
-    'assets/app/other_game/trans.png',
-    'assets/app/other_game/trans.png',
+    'assets/app/other_game/trans1.png',
+    'assets/app/other_game/trans2.png',
   ];
 
   final controller2 = CarouselController();
@@ -42,7 +41,7 @@ class _MobileAppPageState extends State<MobileAppPage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(
-                  height: 100,
+                  height: 40,
                 ),
 
                 buildAppURLButton(
@@ -55,7 +54,7 @@ class _MobileAppPageState extends State<MobileAppPage> {
                     textColor: Colors.white),
 
                 const SizedBox(
-                  height: 80,
+                  height: 40,
                 ),
 
                 //画�?
@@ -66,9 +65,10 @@ class _MobileAppPageState extends State<MobileAppPage> {
                       itemCount: img_trans.length,
                       options: CarouselOptions(
                           autoPlay: true,
+                          autoPlayCurve: Curves.easeInExpo,
                           aspectRatio: 2,
                           autoPlayAnimationDuration: const Duration(seconds: 2),
-                          height: 400,
+                          height: 270,
                           enlargeCenterPage: true,
                           enlargeStrategy: CenterPageEnlargeStrategy.height,
                           reverse: false,
@@ -78,15 +78,15 @@ class _MobileAppPageState extends State<MobileAppPage> {
                             });
                           }),
                       itemBuilder: (ctx, index, realIndex) {
-                        final apekImg = img_trans[index];
-                        return buildImage(apekImg);
+                        final transImg = img_trans[index];
+                        return buildImage(transImg);
                       },
                     ),
                   ],
                 ),
 
                 const SizedBox(
-                  height: 80,
+                  height: 200,
                 ),
 
                 buildAppURLButton(
@@ -97,15 +97,17 @@ class _MobileAppPageState extends State<MobileAppPage> {
                     apple: false,
                     mobile: true,
                     textColor: Colors.white),
-
                 const SizedBox(
-                  height: 80,
+                  height: 40,
                 ),
 
-                Image.asset(height: 400, "assets/app/other_game/memo.png"),
+                SizedBox(
+                    height: 270,
+                    child: Image.asset(
+                        height: 400, "assets/app/other_game/memo.png")),
 
                 const SizedBox(
-                  height: 80,
+                  height: 200,
                 ),
 
                 buildAppURLButton(
@@ -118,7 +120,7 @@ class _MobileAppPageState extends State<MobileAppPage> {
                     textColor: Colors.white),
 
                 const SizedBox(
-                  height: 80,
+                  height: 40,
                 ),
 
                 //画�?
@@ -130,8 +132,9 @@ class _MobileAppPageState extends State<MobileAppPage> {
                       options: CarouselOptions(
                           autoPlay: true,
                           aspectRatio: 2,
+                          autoPlayCurve: Curves.easeInExpo,
                           autoPlayAnimationDuration: const Duration(seconds: 2),
-                          height: 400,
+                          height: 270,
                           enlargeCenterPage: true,
                           enlargeStrategy: CenterPageEnlargeStrategy.height,
                           reverse: false,
@@ -141,16 +144,17 @@ class _MobileAppPageState extends State<MobileAppPage> {
                             });
                           }),
                       itemBuilder: (ctx, index, realIndex) {
-                        final fpsImg = img_pass[index];
-                        return buildImage(fpsImg);
+                        final passImg = img_pass[index];
+                        return buildImage(passImg);
                       },
                     ),
                   ],
                 ),
 
                 const SizedBox(
-                  height: 80,
+                  height: 200,
                 ),
+
                 //Ok Google kun android
                 buildAppURLButton(
                     image: "assets/app/apps_icon/ai_g_logo.png",
@@ -162,7 +166,7 @@ class _MobileAppPageState extends State<MobileAppPage> {
                     textColor: Colors.white),
 
                 const SizedBox(
-                  height: 80,
+                  height: 40,
                 ),
 
                 //Ok Google kun android English
@@ -176,97 +180,13 @@ class _MobileAppPageState extends State<MobileAppPage> {
                     textColor: Colors.white),
 
                 const SizedBox(
-                  height: 100,
+                  height: 200,
                 ),
               ],
             ),
           ),
         ),
       ),
-    );
-  }
-
-  Widget buildButton(Function op) => Padding(
-        padding: const EdgeInsets.only(top: 300),
-        child: Row(
-          children: [
-            Container(
-              width: 90,
-              height: 90,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(40),
-                  gradient: const LinearGradient(
-                      begin: Alignment.bottomLeft,
-                      end: Alignment.topRight,
-                      colors: [
-                        Colors.deepOrangeAccent,
-                        Colors.pinkAccent,
-                        Colors.yellowAccent
-                      ])),
-              child: IconButton(
-                  onPressed: previous,
-                  icon: const Icon(
-                    Icons.arrow_back,
-                    size: 60,
-                    color: Colors.white,
-                  )),
-            ),
-            const Spacer(),
-            Container(
-              width: 90,
-              height: 90,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(40),
-                  gradient: const LinearGradient(
-                      begin: Alignment.bottomLeft,
-                      end: Alignment.topRight,
-                      colors: [
-                        Colors.deepOrangeAccent,
-                        Colors.pinkAccent,
-                        Colors.yellowAccent
-                      ])),
-              child: IconButton(
-                  onPressed: () {
-                    op();
-                  },
-                  icon: const Icon(Icons.arrow_forward,
-                      size: 60, color: Colors.white)),
-            )
-          ],
-        ),
-      );
-
-  void animateToSlide(int index) => controller.animateToPage(index);
-
-  void next() => controller.nextPage(duration: const Duration(seconds: 1));
-
-  void previous() =>
-      controller.previousPage(duration: const Duration(seconds: 1));
-
-  Widget buildImage(String imageName) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 18.0),
-      child: Container(
-          decoration: const BoxDecoration(color: Colors.black),
-          width: double.infinity,
-          child: Image.asset(
-            imageName,
-            fit: BoxFit.contain,
-          )),
-    );
-  }
-
-  Widget buildIndicator1() {
-    return AnimatedSmoothIndicator(
-      activeIndex: activeIndex,
-      count: img_trans.length,
-      onDotClicked: animateToSlide,
-      duration: const Duration(seconds: 1),
-      effect: const ExpandingDotsEffect(
-          activeDotColor: Colors.orange,
-          dotColor: Colors.grey,
-          dotWidth: 20,
-          dotHeight: 20),
     );
   }
 }

@@ -140,9 +140,7 @@ class _DesktopContactBodyState extends State<DesktopContactBody> {
             ),
           ),
 
-          const SizedBox(
-            height: 70,
-          ),
+          const SizedBox(height: 250,)
         ],
       ),
     );
@@ -347,7 +345,7 @@ class _DesktopContactBodyState extends State<DesktopContactBody> {
                       borderRadius: BorderRadius.circular(10)),
                 ),
               ),
-            )
+            ),
           ],
         ),
       );

@@ -101,25 +101,15 @@ AppBar buildAppBar(String title) {
   );
 }
 
-// BoxDecoration appButtonBoxDecration(
-//     double radius, Color gradC1, Color gradC2, Color shadowColor) {
-//   return BoxDecoration(
-//     borderRadius: BorderRadius.circular(radius),
-//     boxShadow: [
-//       BoxShadow(
-//         color: shadowColor,
-//         spreadRadius: 5,
-//         blurRadius: 7,
-//         offset: const Offset(0, 3), // changes position of shadow
-//       ),
-//     ],
-//     gradient: LinearGradient(
-//       colors: [gradC1, gradC2],
-//       begin: Alignment.topLeft,
-//       end: Alignment.bottomRight,
-//     ),
-//   );
-// }
+Widget buildImage(String imageName) {
+  return Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 14.0),
+    child: Image.asset(
+      imageName,
+      fit: BoxFit.contain,
+    ),
+  );
+}
 
 Widget buildAppURLButton(
         {required String image,
@@ -129,79 +119,77 @@ Widget buildAppURLButton(
         required bool apple,
         required bool mobile,
         required Color textColor}) =>
-    Padding(
-      padding: const EdgeInsets.only(top: 20),
-      child: mobile
-          ? GestureDetector(
-              onTap: () {
-                onClick();
-              },
-              child: SizedBox(
-                height: 80,
-                width: 550,
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
-                      BoxShadow(
-                        color: ios
-                            ? Color.fromARGB(255, 107, 224, 253).withOpacity(.5)
-                            : Color.fromARGB(255, 236, 173, 102)
-                                .withOpacity(.5),
-                        spreadRadius: 5,
-                        blurRadius: 7,
-                        offset:
-                            const Offset(0, 3), // changes position of shadow
-                      ),
-                    ],
-                    gradient: LinearGradient(
-                      colors: ios
-                          ? [
-                              Color.fromARGB(255, 24, 203, 247),
-                              Color.fromARGB(255, 3, 64, 231),
-                            ]
-                          : [
-                              Color.fromARGB(255, 21, 218, 119),
-                              Color.fromARGB(255, 219, 125, 11),
-                            ],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
+    mobile
+        ? GestureDetector(
+            onTap: () {
+              onClick();
+            },
+            child: SizedBox(
+              height: 80,
+              width: 550,
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                      color: ios
+                          ? Color.fromARGB(255, 107, 224, 253).withOpacity(.5)
+                          : Color.fromARGB(255, 236, 173, 102).withOpacity(.5),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: const Offset(0, 3), // changes position of shadow
                     ),
+                  ],
+                  gradient: LinearGradient(
+                    colors: ios
+                        ? [
+                            Color.fromARGB(255, 24, 203, 247),
+                            Color.fromARGB(255, 3, 64, 231),
+                          ]
+                        : [
+                            Color.fromARGB(255, 21, 218, 119),
+                            Color.fromARGB(255, 219, 125, 11),
+                          ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 7.0),
-                    child: Row(
-                      children: [
-                        ClipRRect(
-                          borderRadius: apple
-                              ? BorderRadius.circular(10.0)
-                              : BorderRadius.circular(40.0),
-                          child: Image.asset(
-                            image,
-                            fit: BoxFit.cover,
-                            width: 60,
-                            height: 60,
-                          ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 7.0),
+                  child: Row(
+                    children: [
+                      ClipRRect(
+                        borderRadius: apple
+                            ? BorderRadius.circular(10.0)
+                            : BorderRadius.circular(40.0),
+                        child: Image.asset(
+                          image,
+                          fit: BoxFit.cover,
+                          width: 60,
+                          height: 60,
                         ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        RichText(
-                          text: TextSpan(
-                              text: appName,
-                              style: TextStyle(
-                                  fontFamily: "kaisei",
-                                  color: textColor,
-                                  fontSize: 18,
-                                  decoration: TextDecoration.underline)),
-                        )
-                      ],
-                    ),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      RichText(
+                        text: TextSpan(
+                            text: appName,
+                            style: TextStyle(
+                                fontFamily: "kaisei",
+                                color: textColor,
+                                fontSize: 18,
+                                decoration: TextDecoration.underline)),
+                      )
+                    ],
                   ),
                 ),
               ),
-            )
-          : OnHoverWidget(
+            ),
+          )
+        : Padding(
+            padding: const EdgeInsets.only(top: 20),
+            child: OnHoverWidget(
               child: GestureDetector(
                 onTap: () {
                   onClick();
@@ -273,7 +261,7 @@ Widget buildAppURLButton(
                 ),
               ),
             ),
-    );
+          );
 
 // Android Game App----------------------------------------------------------------
 Future<void> apekAndroidURL() async => await canLaunch(apekApp)
