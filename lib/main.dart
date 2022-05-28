@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'アプリサポートウェブサイト',
+      title: 'お問い合わせサイト',
       theme: ThemeData(
           appBarTheme: const AppBarTheme(
               iconTheme: IconThemeData(size: 30, color: Colors.white))),

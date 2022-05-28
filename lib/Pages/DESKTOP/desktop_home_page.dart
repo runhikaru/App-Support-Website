@@ -236,7 +236,7 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
                             description: "リアル3D-学校-"),
                         ScrollToItem(
                             callback: scrollToItem6,
-                            appName: "その他ゲーム",
+                            appName: "ミニゲーム",
                             description: "おじさんで積み木他"),
                         buildMenuCard(scrollToItem8, "アプリ開発", 0.6, 14),
                         ScrollToItem(

@@ -49,7 +49,22 @@ class _MobileFPSGamePageState extends State<MobileFPSGamePage> {
                   height: 100,
                 ),
 
-                buildAppLink(
+                buildAppURLButton(
+                    image: "assets/app/apek_app/apek_logo.png",
+                    appName: "Apek Legends\n(Apple Store)",
+                    onClick: apekIOSURL,
+                    gradC1: Color.fromARGB(255, 24, 203, 247),
+                    gradC2: Color.fromARGB(255, 3, 64, 231),
+                    shadowColor: const Color.fromARGB(255, 236, 173, 102)
+                        .withOpacity(.5),
+                    apple: true,mobile: true,
+                    textColor: Colors.white),
+
+                const SizedBox(
+                  height: 80,
+                ),
+
+                buildAppURLButton(
                     image: "assets/app/apek_app/apek_logo.png",
                     appName: "Apek Legends\n(プレイストア)",
                     onClick: apekAndroidURL,
@@ -57,6 +72,7 @@ class _MobileFPSGamePageState extends State<MobileFPSGamePage> {
                     gradC2: Color.fromARGB(255, 219, 125, 11),
                     shadowColor: const Color.fromARGB(255, 107, 224, 253)
                         .withOpacity(.5),
+                    apple: false,mobile: true,
                     textColor: Colors.white),
 
                 const SizedBox(
@@ -94,7 +110,7 @@ class _MobileFPSGamePageState extends State<MobileFPSGamePage> {
                   height: 80,
                 ),
 
-                buildAppLink(
+                buildAppURLButton(
                     image: "assets/app/apps_icon/fps_logo.png",
                     appName: "荒野運動\n(プレイストア)",
                     onClick: fpsAndroidURL,
@@ -102,6 +118,7 @@ class _MobileFPSGamePageState extends State<MobileFPSGamePage> {
                     gradC2: Color.fromARGB(255, 219, 125, 11),
                     shadowColor: const Color.fromARGB(255, 107, 224, 253)
                         .withOpacity(.5),
+                    apple: false,mobile: true,
                     textColor: Colors.white),
 
                 const SizedBox(
@@ -145,59 +162,6 @@ class _MobileFPSGamePageState extends State<MobileFPSGamePage> {
       ),
     );
   }
-
-  Widget buildAppLink(
-          {required String image,
-          required String appName,
-          required Function onClick,
-          required Color gradC1,
-          required Color gradC2,
-          required Color shadowColor,
-          required Color textColor}) =>
-      Padding(
-        padding: const EdgeInsets.only(top: 20),
-        child: GestureDetector(
-          onTap: () {
-            onClick();
-          },
-          child: SizedBox(
-            height: 75,
-            width: 300,
-            child: Container(
-              decoration:
-                  appButtonBoxDecration(10, gradC1, gradC2, shadowColor),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 7.0),
-                child: Row(
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(40.0),
-                      child: Image.asset(
-                        image,
-                        fit: BoxFit.cover,
-                        width: 60,
-                        height: 60,
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    RichText(
-                      text: TextSpan(
-                          text: appName,
-                          style: TextStyle(
-                              fontFamily: "kaisei",
-                              color: textColor,
-                              fontSize: 15,
-                              decoration: TextDecoration.underline)),
-                    )
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ),
-      );
 
   Widget buildButton(Function op) => Padding(
         padding: const EdgeInsets.only(top: 300),

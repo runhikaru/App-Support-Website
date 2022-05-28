@@ -59,7 +59,7 @@ class _DesktopDeveloperBodyState extends State<DesktopDeveloperBody> {
         Align(
             alignment: Alignment.center,
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              padding: const EdgeInsets.symmetric(vertical: 20.0),
               child: Text("(c) 2021 MHikaru inc.",
                   style: TextStyle(
                       fontSize: 13, color: Colors.white.withOpacity(0.5))),

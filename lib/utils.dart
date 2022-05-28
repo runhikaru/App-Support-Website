@@ -1,4 +1,5 @@
 //掲示板　app
+import 'package:app_support_website/Widget/on_hover_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -64,6 +65,9 @@ const escHospitalAppIOS =
 //フーマ
 const foomAppIOS = "https://apps.apple.com/us/app/モンスターフーマの冒険/id1625652187";
 
+//フーマ
+const apekAppIOS = "https://apps.apple.com/us/app/apek-legends/id1626107035";
+
 const desktopWidth = 800;
 
 AppBar buildAppBar(String title) {
@@ -79,49 +83,176 @@ AppBar buildAppBar(String title) {
     ),
     centerTitle: true,
     flexibleSpace: Container(
-      decoration: buildBoxDecration(0),
-    ),
+        decoration: BoxDecoration(
+      boxShadow: [
+        BoxShadow(
+          color: const Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
+          spreadRadius: 5,
+          blurRadius: 7,
+          offset: const Offset(0, 3), // changes position of shadow
+        ),
+      ],
+      gradient: const LinearGradient(
+        colors: [Color.fromRGBO(100, 232, 255, 1), Colors.deepPurple],
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+      ),
+    )),
   );
 }
 
-BoxDecoration buildBoxDecration(double radius) {
-  return BoxDecoration(
-    borderRadius: BorderRadius.circular(radius),
-    boxShadow: [
-      BoxShadow(
-        color: const Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
-        spreadRadius: 5,
-        blurRadius: 7,
-        offset: const Offset(0, 3), // changes position of shadow
-      ),
-    ],
-    gradient: const LinearGradient(
-      colors: [Color.fromRGBO(100, 232, 255, 1), Colors.deepPurple],
-      begin: Alignment.topLeft,
-      end: Alignment.bottomRight,
-    ),
-  );
-}
+// BoxDecoration appButtonBoxDecration(
+//     double radius, Color gradC1, Color gradC2, Color shadowColor) {
+//   return BoxDecoration(
+//     borderRadius: BorderRadius.circular(radius),
+//     boxShadow: [
+//       BoxShadow(
+//         color: shadowColor,
+//         spreadRadius: 5,
+//         blurRadius: 7,
+//         offset: const Offset(0, 3), // changes position of shadow
+//       ),
+//     ],
+//     gradient: LinearGradient(
+//       colors: [gradC1, gradC2],
+//       begin: Alignment.topLeft,
+//       end: Alignment.bottomRight,
+//     ),
+//   );
+// }
 
-BoxDecoration appButtonBoxDecration(
-    double radius, Color gradC1, Color gradC2, Color shadowColor) {
-  return BoxDecoration(
-    borderRadius: BorderRadius.circular(radius),
-    boxShadow: [
-      BoxShadow(
-        color: shadowColor,
-        spreadRadius: 5,
-        blurRadius: 7,
-        offset: const Offset(0, 3), // changes position of shadow
-      ),
-    ],
-    gradient: LinearGradient(
-      colors: [gradC1, gradC2],
-      begin: Alignment.topLeft,
-      end: Alignment.bottomRight,
-    ),
-  );
-}
+Widget buildAppURLButton(
+        {required String image,
+        required String appName,
+        required Function onClick,
+        required Color gradC1,
+        required Color gradC2,
+        required Color shadowColor,
+        required bool apple,
+        required bool mobile,
+        required Color textColor}) =>
+    Padding(
+      padding: const EdgeInsets.only(top: 20),
+      child: mobile
+          ? GestureDetector(
+              onTap: () {
+                onClick();
+              },
+              child: SizedBox(
+                height: 80,
+                width: 550,
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: shadowColor,
+                        spreadRadius: 5,
+                        blurRadius: 7,
+                        offset:
+                            const Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
+                    gradient: LinearGradient(
+                      colors: [gradC1, gradC2],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 7.0),
+                    child: Row(
+                      children: [
+                        ClipRRect(
+                          borderRadius: apple
+                              ? BorderRadius.circular(10.0)
+                              : BorderRadius.circular(40.0),
+                          child: Image.asset(
+                            image,
+                            fit: BoxFit.cover,
+                            width: 60,
+                            height: 60,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        RichText(
+                          text: TextSpan(
+                              text: appName,
+                              style: TextStyle(
+                                  fontFamily: "kaisei",
+                                  color: textColor,
+                                  fontSize: 18,
+                                  decoration: TextDecoration.underline)),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            )
+          : OnHoverWidget(
+              child: GestureDetector(
+                onTap: () {
+                  onClick();
+                },
+                child: SizedBox(
+                  height: 80,
+                  width: 550,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: shadowColor,
+                          spreadRadius: 5,
+                          blurRadius: 7,
+                          offset:
+                              const Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
+                      gradient: LinearGradient(
+                        colors: [gradC1, gradC2],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 7.0),
+                      child: Row(
+                        children: [
+                          ClipRRect(
+                            borderRadius: apple
+                                ? BorderRadius.circular(10.0)
+                                : BorderRadius.circular(40.0),
+                            child: Image.asset(
+                              image,
+                              fit: BoxFit.cover,
+                              width: 60,
+                              height: 60,
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          RichText(
+                            text: TextSpan(
+                                text: appName,
+                                style: TextStyle(
+                                    fontFamily: "kaisei",
+                                    color: textColor,
+                                    fontSize: 28,
+                                    decoration: TextDecoration.underline)),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+    );
 
 // Android Game App----------------------------------------------------------------
 Future<void> apekAndroidURL() async => await canLaunch(apekApp)
@@ -159,10 +290,9 @@ Future<void> dotURL() async => await canLaunch(dotSwordURL)
     : throw 'Could not launch $dotSwordURL';
 
 // Android Flutter App----------------------------------------------------------------
-Future<void> translateAppAndroidURL() async =>
-    await canLaunch(translateAppAndroid)
-        ? await launch(translateAppAndroid)
-        : throw 'Could not launch $translateAppAndroid';
+Future<void> translateAndroidURL() async => await canLaunch(translateAppAndroid)
+    ? await launch(translateAppAndroid)
+    : throw 'Could not launch $translateAppAndroid';
 
 Future<void> okGoogleAndroidURL() async => await canLaunch(okGoogleAppAndroid)
     ? await launch(okGoogleAppAndroid)
@@ -173,19 +303,23 @@ Future<void> okGoogleEnglishAndroidURL() async =>
         ? await launch(okGoogleEnglishAppAndroid)
         : throw 'Could not launch $okGoogleEnglishAppAndroid';
 
-Future<void> memoAppAndroidURL() async => await canLaunch(memoAppAndroid)
+Future<void> memoAndroidURL() async => await canLaunch(memoAppAndroid)
     ? await launch(memoAppAndroid)
     : throw 'Could not launch $memoAppAndroid';
 
-Future<void> psportAppAndroidURL() async => await canLaunch(psportAppAndroid)
+Future<void> psportAndroidURL() async => await canLaunch(psportAppAndroid)
     ? await launch(psportAppAndroid)
     : throw 'Could not launch $psportAppAndroid';
 
 // IOS Game App----------------------------------------------------------------
-Future<void> escHospitalAppIOSURL() async => await canLaunch(escHospitalAppIOS)
+Future<void> escHospitalIOSURL() async => await canLaunch(escHospitalAppIOS)
     ? await launch(escHospitalAppIOS)
     : throw 'Could not launch $escHospitalAppIOS';
 
-    Future<void> foomAppIOSURL() async => await canLaunch(foomAppIOS)
+Future<void> foomIOSURL() async => await canLaunch(foomAppIOS)
     ? await launch(foomAppIOS)
     : throw 'Could not launch $foomAppIOS';
+
+Future<void> apekIOSURL() async => await canLaunch(apekAppIOS)
+    ? await launch(apekAppIOS)
+    : throw 'Could not launch $apekAppIOS';

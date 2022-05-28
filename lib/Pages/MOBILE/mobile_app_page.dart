@@ -46,14 +46,15 @@ class _MobileAppPageState extends State<MobileAppPage> {
                   height: 100,
                 ),
 
-                buildAppLink(
+                buildAppURLButton(
                     image: "assets/app/apps_icon/translation.png",
                     appName: "翻訳アプリ\n(プレイストア)",
-                    onClick: translateAppAndroidURL,
+                    onClick: translateAndroidURL,
                     gradC1: Color.fromARGB(255, 21, 218, 119),
                     gradC2: Color.fromARGB(255, 219, 125, 11),
                     shadowColor: const Color.fromARGB(255, 107, 224, 253)
                         .withOpacity(.5),
+                    apple: false,mobile: true,
                     textColor: Colors.white),
 
                 const SizedBox(
@@ -91,14 +92,15 @@ class _MobileAppPageState extends State<MobileAppPage> {
                   height: 80,
                 ),
 
-                buildAppLink(
+                buildAppURLButton(
                     image: "assets/app/apps_icon/memo_logo.png",
                     appName: "シンプルなメモ帳\n(プレイストア)",
-                    onClick: memoAppAndroidURL,
+                    onClick: memoAndroidURL,
                     gradC1: Color.fromARGB(255, 21, 218, 119),
                     gradC2: Color.fromARGB(255, 219, 125, 11),
                     shadowColor: const Color.fromARGB(255, 107, 224, 253)
                         .withOpacity(.5),
+                    apple: false,mobile: true,
                     textColor: Colors.white),
 
                 const SizedBox(
@@ -111,14 +113,15 @@ class _MobileAppPageState extends State<MobileAppPage> {
                   height: 80,
                 ),
 
-                buildAppLink(
+                buildAppURLButton(
                     image: "assets/app/apps_icon/ps_logo.png",
                     appName: "パスワード管理アプリ\n(プレイストア)",
-                    onClick: psportAppAndroidURL,
+                    onClick: psportAndroidURL,
                     gradC1: Color.fromARGB(255, 21, 218, 119),
                     gradC2: Color.fromARGB(255, 219, 125, 11),
                     shadowColor: const Color.fromARGB(255, 107, 224, 253)
                         .withOpacity(.5),
+                    apple: false,mobile: true,
                     textColor: Colors.white),
 
                 const SizedBox(
@@ -156,7 +159,7 @@ class _MobileAppPageState extends State<MobileAppPage> {
                   height: 80,
                 ),
                 //Ok Google kun androi
-                buildAppLink(
+                buildAppURLButton(
                     image: "assets/app/apps_icon/ai_g_logo.png",
                     appName: "OK グーグル君\n(プレイストア)",
                     onClick: okGoogleAndroidURL,
@@ -164,6 +167,7 @@ class _MobileAppPageState extends State<MobileAppPage> {
                     gradC2: Color.fromARGB(255, 219, 125, 11),
                     shadowColor: const Color.fromARGB(255, 107, 224, 253)
                         .withOpacity(.5),
+                    apple: false,mobile: true,
                     textColor: Colors.white),
 
                 const SizedBox(
@@ -171,7 +175,7 @@ class _MobileAppPageState extends State<MobileAppPage> {
                 ),
 
                 //Ok Google kun androi English
-                buildAppLink(
+                buildAppURLButton(
                     image: "assets/app/apps_icon/ai_g_logo.png",
                     appName: "OK グーグル君\n-英語版-",
                     onClick: okGoogleEnglishAndroidURL,
@@ -179,6 +183,7 @@ class _MobileAppPageState extends State<MobileAppPage> {
                     gradC2: Color.fromARGB(255, 219, 125, 11),
                     shadowColor: const Color.fromARGB(255, 107, 224, 253)
                         .withOpacity(.5),
+                    apple: false,mobile: true,
                     textColor: Colors.white),
 
                 const SizedBox(
@@ -191,59 +196,6 @@ class _MobileAppPageState extends State<MobileAppPage> {
       ),
     );
   }
-
-  Widget buildAppLink(
-          {required String image,
-          required String appName,
-          required Function onClick,
-          required Color gradC1,
-          required Color gradC2,
-          required Color shadowColor,
-          required Color textColor}) =>
-      Padding(
-        padding: const EdgeInsets.only(top: 20),
-        child: GestureDetector(
-          onTap: () {
-            onClick();
-          },
-          child: SizedBox(
-            height: 75,
-            width: 300,
-            child: Container(
-              decoration:
-                  appButtonBoxDecration(10, gradC1, gradC2, shadowColor),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 7.0),
-                child: Row(
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(40.0),
-                      child: Image.asset(
-                        image,
-                        fit: BoxFit.cover,
-                        width: 60,
-                        height: 60,
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    RichText(
-                      text: TextSpan(
-                          text: appName,
-                          style: TextStyle(
-                              fontFamily: "kaisei",
-                              color: textColor,
-                              fontSize: 15,
-                              decoration: TextDecoration.underline)),
-                    )
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ),
-      );
 
   Widget buildButton(Function op) => Padding(
         padding: const EdgeInsets.only(top: 300),

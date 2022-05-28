@@ -94,7 +94,23 @@ class _MobileServicePageState extends State<MobileServicePage> {
               height: 100,
             ),
 
-            buildAppLink(
+            buildAppURLButton(
+                image: "assets/app/apek_app/apek_logo.png",
+                appName: "Apek Legends\n(Apple Store)",
+                onClick: apekIOSURL,
+                gradC1: Color.fromARGB(255, 24, 203, 247),
+                gradC2: Color.fromARGB(255, 3, 64, 231),
+                shadowColor:
+                    const Color.fromARGB(255, 236, 173, 102).withOpacity(.5),
+                apple: true,
+                mobile: true,
+                textColor: Colors.white),
+
+            const SizedBox(
+              height: 80,
+            ),
+
+            buildAppURLButton(
                 image: "assets/app/apek_app/apek_logo.png",
                 appName: "Apek Legends\n(プレイストア)",
                 onClick: apekAndroidURL,
@@ -102,6 +118,8 @@ class _MobileServicePageState extends State<MobileServicePage> {
                 gradC2: Color.fromARGB(255, 219, 125, 11),
                 shadowColor:
                     const Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
+                apple: false,
+                mobile: true,
                 textColor: Colors.white),
 
             const SizedBox(
@@ -111,7 +129,7 @@ class _MobileServicePageState extends State<MobileServicePage> {
             SizedBox(
               height: 400,
               child: Image.asset(
-                "assets/app/apek_app/apek1.png",
+                "assets/app/apek_app/apek.png",
               ),
             ),
 
@@ -119,42 +137,47 @@ class _MobileServicePageState extends State<MobileServicePage> {
               height: 80,
             ),
 
-            buildAppLink(
-                image: "assets/app/apps_icon/fps_logo.png",
-                appName: "荒野運動\n(プレイストア)",
-                onClick: fpsAndroidURL,
-                gradC1: Color.fromARGB(255, 21, 218, 119),
-                gradC2: Color.fromARGB(255, 219, 125, 11),
-                shadowColor:
-                    const Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
-                textColor: Colors.white),
+            // buildAppURLButton(
+            //     image: "assets/app/apps_icon/fps_logo.png",
+            //     appName: "荒野運動\n(プレイストア)",
+            //     onClick: fpsAndroidURL,
+            //     gradC1: Color.fromARGB(255, 21, 218, 119),
+            //     gradC2: Color.fromARGB(255, 219, 125, 11),
+            //     shadowColor:
+            //         const Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
+            //     apple: false,
+            //     mobile: true,
+            //     textColor: Colors.white),
 
-            const SizedBox(
-              height: 80,
-            ),
-            SizedBox(
-                height: 400,
-                child: Image.asset("assets/app/apek_app/apek1.png")),
+            // const SizedBox(
+            //   height: 80,
+            // ),
 
-            const SizedBox(
-              height: 80,
-            ),
+            // SizedBox(
+            //     height: 400,
+            //     child: Image.asset("assets/app/apek_app/apek1.png")),
 
-            buildAppLink(
+            // const SizedBox(
+            //   height: 80,
+            // ),
+
+            buildAppURLButton(
                 image: "assets/app/apps_icon/esc_hospital_logo.png",
                 appName: "脱出ゲーム -廃病院-\n(Apple Store)",
-                onClick: escHospitalAppIOSURL,
+                onClick: escHospitalIOSURL,
                 gradC1: Color.fromARGB(255, 24, 203, 247),
                 gradC2: Color.fromARGB(255, 3, 64, 231),
                 shadowColor:
                     const Color.fromARGB(255, 236, 173, 102).withOpacity(.5),
+                apple: true,
+                mobile: true,
                 textColor: Colors.white),
 
             const SizedBox(
               height: 80,
             ),
 
-            buildAppLink(
+            buildAppURLButton(
                 image: "assets/app/apps_icon/esc_hospital_logo.png",
                 appName: "脱出ゲーム -廃病院-\n(プレイストア)",
                 onClick: escHospitalAndroidURL,
@@ -162,6 +185,8 @@ class _MobileServicePageState extends State<MobileServicePage> {
                 gradC2: Color.fromARGB(255, 219, 125, 11),
                 shadowColor:
                     const Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
+                apple: false,
+                mobile: true,
                 textColor: Colors.white),
 
             const SizedBox(
@@ -176,7 +201,7 @@ class _MobileServicePageState extends State<MobileServicePage> {
               height: 80,
             ),
 
-            buildAppLink(
+            buildAppURLButton(
                 image: "assets/app/apps_icon/esc_logo.png",
                 appName: "脱出ゲーム -学校の教室-\n(プレイストア)",
                 onClick: escSchoolAndroidURL,
@@ -184,6 +209,8 @@ class _MobileServicePageState extends State<MobileServicePage> {
                 gradC2: Color.fromARGB(255, 219, 125, 11),
                 shadowColor:
                     const Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
+                apple: false,
+                mobile: true,
                 textColor: Colors.white),
 
             const SizedBox(
@@ -197,21 +224,23 @@ class _MobileServicePageState extends State<MobileServicePage> {
               height: 80,
             ),
 
-            buildAppLink(
+            buildAppURLButton(
                 image: "assets/app/apps_icon/foom_logo.png",
                 appName: "フーマ冒険\n(Apple Store)",
-                onClick: foomAppIOSURL,
+                onClick: foomIOSURL,
                 gradC1: Color.fromARGB(255, 24, 203, 247),
                 gradC2: Color.fromARGB(255, 3, 64, 231),
                 shadowColor:
                     const Color.fromARGB(255, 236, 173, 102).withOpacity(.5),
+                apple: true,
+                mobile: true,
                 textColor: Colors.white),
 
             const SizedBox(
               height: 80,
             ),
 
-            buildAppLink(
+            buildAppURLButton(
                 image: "assets/app/apps_icon/foom_logo.png",
                 appName: "フーマ冒険\n(プレイストア)",
                 onClick: foomAndroidURL,
@@ -219,6 +248,8 @@ class _MobileServicePageState extends State<MobileServicePage> {
                 gradC2: Color.fromARGB(255, 219, 125, 11),
                 shadowColor:
                     const Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
+                apple: false,
+                mobile: true,
                 textColor: Colors.white),
 
             const SizedBox(
@@ -232,7 +263,7 @@ class _MobileServicePageState extends State<MobileServicePage> {
               height: 80,
             ),
 
-            buildAppLink(
+            buildAppURLButton(
                 image: "assets/app/apps_icon/ozisan.png",
                 appName: "おじさんで積み木\n(プレイストア)",
                 onClick: ozisanAndroidURL,
@@ -240,6 +271,8 @@ class _MobileServicePageState extends State<MobileServicePage> {
                 gradC2: Color.fromARGB(255, 219, 125, 11),
                 shadowColor:
                     const Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
+                apple: false,
+                mobile: true,
                 textColor: Colors.white),
 
             const SizedBox(
@@ -253,7 +286,7 @@ class _MobileServicePageState extends State<MobileServicePage> {
               height: 80,
             ),
 
-            buildAppLink(
+            buildAppURLButton(
                 image: "assets/app/apps_icon/hcasual.png",
                 appName: "スタックボール\n(プレイストア)",
                 onClick: stackBallAndroidURL,
@@ -261,6 +294,8 @@ class _MobileServicePageState extends State<MobileServicePage> {
                 gradC2: Color.fromARGB(255, 219, 125, 11),
                 shadowColor:
                     const Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
+                apple: false,
+                mobile: true,
                 textColor: Colors.white),
 
             const SizedBox(
@@ -288,14 +323,16 @@ class _MobileServicePageState extends State<MobileServicePage> {
             ),
 
             //翻訳アプリ androi
-            buildAppLink(
+            buildAppURLButton(
                 image: "assets/app/apps_icon/translation.png",
                 appName: "翻訳アプリ\n(プレイストア)",
-                onClick: translateAppAndroidURL,
+                onClick: translateAndroidURL,
                 gradC1: Color.fromARGB(255, 21, 218, 119),
                 gradC2: Color.fromARGB(255, 219, 125, 11),
                 shadowColor:
                     const Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
+                apple: false,
+                mobile: true,
                 textColor: Colors.white),
 
             const SizedBox(
@@ -340,14 +377,16 @@ class _MobileServicePageState extends State<MobileServicePage> {
             //   height: 80,
             // ),
 
-            buildAppLink(
+            buildAppURLButton(
                 image: "assets/app/apps_icon/memo_logo.png",
                 appName: "シンプルなメモ帳\n(プレイストア)",
-                onClick: memoAppAndroidURL,
+                onClick: memoAndroidURL,
                 gradC1: Color.fromARGB(255, 21, 218, 119),
                 gradC2: Color.fromARGB(255, 219, 125, 11),
                 shadowColor:
                     const Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
+                apple: false,
+                mobile: true,
                 textColor: Colors.white),
 
             const SizedBox(
@@ -362,14 +401,16 @@ class _MobileServicePageState extends State<MobileServicePage> {
               height: 80,
             ),
 
-            buildAppLink(
+            buildAppURLButton(
                 image: "assets/app/apps_icon/ps_logo.png",
                 appName: "パスワード管理アプリ\n(プレイストア)",
-                onClick: psportAppAndroidURL,
+                onClick: psportAndroidURL,
                 gradC1: Color.fromARGB(255, 21, 218, 119),
                 gradC2: Color.fromARGB(255, 219, 125, 11),
                 shadowColor:
                     const Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
+                apple: false,
+                mobile: true,
                 textColor: Colors.white),
 
             const SizedBox(
@@ -384,7 +425,7 @@ class _MobileServicePageState extends State<MobileServicePage> {
               height: 80,
             ),
             //Ok Google kun androi
-            buildAppLink(
+            buildAppURLButton(
                 image: "assets/app/apps_icon/ai_g_logo.png",
                 appName: "OK グーグル君\n(プレイストア)",
                 onClick: okGoogleAndroidURL,
@@ -392,6 +433,8 @@ class _MobileServicePageState extends State<MobileServicePage> {
                 gradC2: Color.fromARGB(255, 219, 125, 11),
                 shadowColor:
                     const Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
+                apple: false,
+                mobile: true,
                 textColor: Colors.white),
 
             const SizedBox(height: 80),
@@ -416,57 +459,4 @@ class _MobileServicePageState extends State<MobileServicePage> {
       ),
     );
   }
-
-  Widget buildAppLink(
-          {required String image,
-          required String appName,
-          required Function onClick,
-          required Color gradC1,
-          required Color gradC2,
-          required Color shadowColor,
-          required Color textColor}) =>
-      Padding(
-        padding: const EdgeInsets.only(top: 20),
-        child: GestureDetector(
-          onTap: () {
-            onClick();
-          },
-          child: SizedBox(
-            height: 75,
-            width: 300,
-            child: Container(
-              decoration:
-                  appButtonBoxDecration(10, gradC1, gradC2, shadowColor),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 7.0),
-                child: Row(
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(40.0),
-                      child: Image.asset(
-                        image,
-                        fit: BoxFit.cover,
-                        width: 60,
-                        height: 60,
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    RichText(
-                      text: TextSpan(
-                          text: appName,
-                          style: TextStyle(
-                              fontFamily: "kaisei",
-                              color: textColor,
-                              fontSize: 15,
-                              decoration: TextDecoration.underline)),
-                    )
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ),
-      );
 }
