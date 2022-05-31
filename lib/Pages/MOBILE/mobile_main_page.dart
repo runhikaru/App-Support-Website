@@ -139,7 +139,7 @@ class _MobileMainPageState extends State<MobileMainPage> {
                   ),
                   onTap: () {
                     Get.to(() => const MobilePopularGamePage(),
-                        transition: Transition.circularReveal,
+                        transition: Transition.size,
                         duration: const Duration(seconds: 2));
                   },
                 ),
@@ -152,7 +152,7 @@ class _MobileMainPageState extends State<MobileMainPage> {
                   ),
                   onTap: () {
                     Get.to(() => const MobileFPSGamePage(),
-                        transition: Transition.circularReveal,
+                        transition: Transition.size,
                         duration: const Duration(seconds: 2));
                   },
                 ),
@@ -164,7 +164,7 @@ class _MobileMainPageState extends State<MobileMainPage> {
                   ),
                   onTap: () {
                     Get.to(() => const MobileMinGamePage(),
-                        transition: Transition.circularReveal,
+                        transition: Transition.size,
                         duration: const Duration(seconds: 2));
                   },
                 ),
@@ -177,7 +177,7 @@ class _MobileMainPageState extends State<MobileMainPage> {
                   ),
                   onTap: () {
                     Get.to(() => const MobileAppPage(),
-                        transition: Transition.circularReveal,
+                        transition: Transition.size,
                         duration: const Duration(seconds: 2));
                   },
                 ),

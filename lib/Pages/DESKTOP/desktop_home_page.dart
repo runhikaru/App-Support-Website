@@ -152,7 +152,7 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
           TextButton(
               onPressed: () {
                 Get.to(() => const DesktopPPBody(),
-                    transition: Transition.circularReveal,
+                    transition: Transition.size,
                     duration: const Duration(seconds: 3));
               },
               child: const Text(
