@@ -99,7 +99,7 @@ flutter:
     - assets/app/other_game/
     - assets/app/youtube_icon/
     - assets/app/apek_app/
-    - assets/app/fps_app/
+    - assets/app/kouya_app/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

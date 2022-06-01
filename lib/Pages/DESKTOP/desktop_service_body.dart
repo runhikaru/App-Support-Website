@@ -42,7 +42,6 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
     'assets/app/apek_app/apek1.png',
     'assets/app/apek_app/apek2.png',
     'assets/app/apek_app/apek3.png',
-    'assets/app/apek_app/apek4.png',
   ];
 
   final controller2 = CarouselController();
@@ -58,6 +57,14 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
   final img_psport = [
     'assets/app/other_game/pass.png',
     'assets/app/other_game/pass2.png',
+  ];
+
+  final controller4 = CarouselController();
+  int activeIndex4 = 0;
+  final img_kouya = [
+    'assets/app/kouya_app/kouya1.png',
+    'assets/app/kouya_app/kouya2.png',
+    'assets/app/kouya_app/kouya3.png',
   ];
 
   //hover
@@ -272,6 +279,62 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
 
         const SizedBox(
           height: 250,
+        ),
+
+        buildAppURLButton(
+            image: "assets/app/apek_app/apek_logo.png",
+            appName: "荒野運動(プレイストア)",
+            onClick: apekAndroidURL,
+            ios: false,
+            apple: false,
+            mobile: false,
+            textColor: Colors.white),
+
+        const SizedBox(
+          height: 60,
+        ),
+
+        //荒野 Image
+        Stack(
+          children: [
+            CarouselSlider.builder(
+              carouselController: controller4,
+              itemCount: img_kouya.length,
+              options: CarouselOptions(
+                  autoPlay: true,
+                  aspectRatio: 2,
+                  autoPlayCurve: Curves.easeInExpo,
+                  autoPlayAnimationDuration: const Duration(seconds: 2),
+                  height: 400,
+                  enlargeCenterPage: true,
+                  enlargeStrategy: CenterPageEnlargeStrategy.height,
+                  reverse: false,
+                  onPageChanged: (index, reason) {
+                    setState(() {
+                      activeIndex4 = index;
+                    });
+                  }),
+              itemBuilder: (ctx, index, realIndex) {
+                final kouyaImg = img_kouya[index];
+                return buildImage(kouyaImg);
+              },
+            ),
+          ],
+        ),
+
+        const SizedBox(
+          height: 250,
+        ),
+
+        Text("ダウンロード数 1位",
+            style: TextStyle(
+                color: Color.fromARGB(255, 255, 236, 23),
+                fontWeight: FontWeight.bold,
+                fontSize: 50,
+                fontFamily: "sawarabi")),
+
+        const SizedBox(
+          height: 60,
         ),
 
         Container(

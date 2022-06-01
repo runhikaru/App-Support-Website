@@ -15,10 +15,10 @@ class _MobilePopularGamePageState extends State<MobilePopularGamePage> {
   final controller = CarouselController();
   int activeIndex = 0;
   final img_apek = [
+    'assets/app/apek_app/apek.png',
+    'assets/app/apek_app/apek1.png',
     'assets/app/apek_app/apek2.png',
     'assets/app/apek_app/apek3.png',
-    'assets/app/apek_app/apek4.png',
-    'assets/app/apek_app/apek5.png',
   ];
 
   @override
@@ -52,7 +52,7 @@ class _MobilePopularGamePageState extends State<MobilePopularGamePage> {
                   const SizedBox(
                     height: 40,
                   ),
-                  Text("総ダウンロード数1000突破!!!\nリアル廃病院からの脱出ゲーム",
+                  Text("総ダウンロード数2000突破!!!\nアップルストア＆プレイストア共にランキング入り\nリアル廃病院からの脱出ゲーム",
                       style: subtitleStyle),
                   const SizedBox(
                     height: 20,
@@ -95,7 +95,7 @@ class _MobilePopularGamePageState extends State<MobilePopularGamePage> {
                   const SizedBox(
                     height: 40,
                   ),
-                  Text("夜の学校からの謎解き＆脱出ゲーム", style: subtitleStyle),
+                  Text("夜の学校からの謎解き＆脱出ゲーム\nプレイストアにランキング入り", style: subtitleStyle),
                   const SizedBox(
                     height: 20,
                   ),

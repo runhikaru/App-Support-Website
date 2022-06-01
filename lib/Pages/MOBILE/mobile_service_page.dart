@@ -137,29 +137,26 @@ class _MobileServicePageState extends State<MobileServicePage> {
               height: 200,
             ),
 
-            // buildAppURLButton(
-            //     image: "assets/app/apps_icon/fps_logo.png",
-            //     appName: "荒野運動\n(プレイストア)",
-            //     onClick: fpsAndroidURL,
-            //     gradC1: Color.fromARGB(255, 21, 218, 119),
-            //     gradC2: Color.fromARGB(255, 219, 125, 11),
-            //     shadowColor:
-            //         const Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
-            //     apple: false,
-            //     mobile: true,
-            //     textColor: Colors.white),
+             buildAppURLButton(
+                image: "assets/app/apps_icon/fps_logo.png",
+                appName: "Apek Legends\n(プレイストア)",
+                onClick: apekAndroidURL,
+                ios: false,
+                apple: false,
+                mobile: true,
+                textColor: Colors.white),
 
-            // const SizedBox(
-            //   height: 80,
-            // ),
+            const SizedBox(
+              height: 40,
+            ),
 
-            // SizedBox(
-            //     height: 400,
-            //     child: Image.asset("assets/app/apek_app/apek1.png")),
+            SizedBox(
+                height: 270,
+                child: Image.asset("assets/app/kouya_app/kouya1.png")),
 
-            // const SizedBox(
-            //   height: 80,
-            // ),
+            const SizedBox(
+              height: 200,
+            ),
 
             buildAppURLButton(
                 image: "assets/app/apps_icon/esc_hospital_logo.png",

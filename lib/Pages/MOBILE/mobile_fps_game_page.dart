@@ -16,19 +16,18 @@ class _MobileFPSGamePageState extends State<MobileFPSGamePage> {
   final controller = CarouselController();
   int activeIndex = 0;
   final img_apek = [
+    'assets/app/apek_app/apek.png',
+    'assets/app/apek_app/apek1.png',
     'assets/app/apek_app/apek2.png',
     'assets/app/apek_app/apek3.png',
-    'assets/app/apek_app/apek4.png',
-    'assets/app/apek_app/apek5.png',
   ];
 
   final controller2 = CarouselController();
   int activeIndex2 = 0;
   final img_icons2 = [
-    'assets/app/fps_app/fps1.png',
-    'assets/app/fps_app/fps2.png',
-    'assets/app/fps_app/fps3.png',
-    'assets/app/fps_app/fps4.png',
+    'assets/app/kouya_app/kouya1.png',
+    'assets/app/kouya_app/kouya2.png',
+    'assets/app/kouya_app/kouya3.png',
   ];
 
   @override
