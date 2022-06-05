@@ -52,7 +52,7 @@ class _MobilePopularGamePageState extends State<MobilePopularGamePage> {
                   const SizedBox(
                     height: 40,
                   ),
-                  Text("総ダウンロード数2000突破!!!\nアップルストア＆プレイストア共にランキング入り\nリアル廃病院からの脱出ゲーム",
+                  Text("総ダウンロード数3000突破!!!\nアップルストア＆プレイストア共にランキング入り\nリアル廃病院からの脱出ゲーム",
                       style: subtitleStyle),
                   const SizedBox(
                     height: 20,

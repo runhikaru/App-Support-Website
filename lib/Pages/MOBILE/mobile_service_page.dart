@@ -139,7 +139,7 @@ class _MobileServicePageState extends State<MobileServicePage> {
 
              buildAppURLButton(
                 image: "assets/app/apps_icon/fps_logo.png",
-                appName: "Apek Legends\n(プレイストア)",
+                appName: "荒野運動\n(プレイストア)",
                 onClick: apekAndroidURL,
                 ios: false,
                 apple: false,

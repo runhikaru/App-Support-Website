@@ -229,11 +229,11 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
                         ScrollToItem(
                             callback: scrollToItem2,
                             appName: "Apek",
-                            description: "FPS"),
-                        // ScrollToItem(
-                        //     callback: scrollToItem3,
-                        //     appName: "FPS",
-                        //     description: "FPS"),
+                            description: "FPS-西洋城マップ-"),
+                        ScrollToItem(
+                            callback: scrollToItem3,
+                            appName: "荒野運動",
+                            description: "空中線-ロボ操作-"),
                         ScrollToItem(
                             callback: scrollToItem4,
                             appName: "脱出ゲーム",

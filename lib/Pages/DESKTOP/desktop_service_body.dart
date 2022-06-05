@@ -281,14 +281,17 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
           height: 250,
         ),
 
-        buildAppURLButton(
-            image: "assets/app/apek_app/apek_logo.png",
-            appName: "荒野運動(プレイストア)",
-            onClick: apekAndroidURL,
-            ios: false,
-            apple: false,
-            mobile: false,
-            textColor: Colors.white),
+        Container(
+          key: widget.fpsKey,
+          child: buildAppURLButton(
+              image: "assets/app/apps_icon/fps_logo.png",
+              appName: "荒野運動(プレイストア)",
+              onClick: apekAndroidURL,
+              ios: false,
+              apple: false,
+              mobile: false,
+              textColor: Colors.white),
+        ),
 
         const SizedBox(
           height: 60,
@@ -435,20 +438,6 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
             apple: false,
             mobile: false,
             textColor: Colors.white),
-
-        const SizedBox(height: 60),
-
-        Container(
-          key: widget.fpsKey,
-          child: buildAppURLButton(
-              image: "assets/app/apps_icon/fps_logo.png",
-              appName: "荒野行動(プレイストア)",
-              onClick: fpsAndroidURL,
-              ios: false,
-              apple: false,
-              mobile: false,
-              textColor: Colors.white),
-        ),
 
         const SizedBox(height: 60),
 

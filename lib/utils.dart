@@ -10,7 +10,7 @@ const apekApp =
 
 //FPSアプリ(Android)
 const fpsAppAndroid =
-    "https://play.google.com/store/apps/details?id=com.Genyosystem.fps";
+    "https://play.google.com/store/apps/details?id=com.genyosystem.kouyakoudou";
 
 //フーマ
 const foomAppAndroid =

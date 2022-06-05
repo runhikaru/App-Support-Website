@@ -140,7 +140,7 @@ class _MobileMainPageState extends State<MobileMainPage> {
                   onTap: () {
                     Get.to(() => const MobilePopularGamePage(),
                         transition: Transition.size,
-                        duration: const Duration(seconds: 2));
+                        duration: const Duration(milliseconds: 1500));
                   },
                 ),
                 ListTile(
@@ -153,7 +153,7 @@ class _MobileMainPageState extends State<MobileMainPage> {
                   onTap: () {
                     Get.to(() => const MobileFPSGamePage(),
                         transition: Transition.size,
-                        duration: const Duration(seconds: 2));
+                        duration: const Duration(milliseconds: 1500));
                   },
                 ),
                 ListTile(
@@ -165,7 +165,7 @@ class _MobileMainPageState extends State<MobileMainPage> {
                   onTap: () {
                     Get.to(() => const MobileMinGamePage(),
                         transition: Transition.size,
-                        duration: const Duration(seconds: 2));
+                        duration: const Duration(milliseconds: 1500));
                   },
                 ),
                 ListTile(
@@ -178,7 +178,7 @@ class _MobileMainPageState extends State<MobileMainPage> {
                   onTap: () {
                     Get.to(() => const MobileAppPage(),
                         transition: Transition.size,
-                        duration: const Duration(seconds: 2));
+                        duration: const Duration(milliseconds: 1500));
                   },
                 ),
                 // const Divider(
@@ -203,7 +203,7 @@ class _MobileMainPageState extends State<MobileMainPage> {
                   onTap: () {
                     Get.to(() => const MobileDeveloperPage(),
                         transition: Transition.leftToRightWithFade,
-                        duration: const Duration(seconds: 3));
+                        duration: const Duration(seconds: 2));
                   },
                 ),
                 ListTile(
@@ -216,7 +216,7 @@ class _MobileMainPageState extends State<MobileMainPage> {
                   onTap: () {
                     Get.to(() => const MobilePPPage(),
                         transition: Transition.leftToRightWithFade,
-                        duration: const Duration(seconds: 3));
+                        duration: const Duration(seconds: 2));
                   },
                 ),
               ],
