@@ -95,7 +95,6 @@ flutter:
   assets:
     - assets/
     - assets/app/
-    - assets/app/apps_icon/
     - assets/app/other_game/
     - assets/app/youtube_icon/
     - assets/app/apek_app/

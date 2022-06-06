@@ -1,15 +1,16 @@
 import 'package:app_support_website/utils.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class MobileAppPage extends StatefulWidget {
-  const MobileAppPage({Key? key}) : super(key: key);
+class MobileFlutterPage extends StatefulWidget {
+  const MobileFlutterPage({Key? key}) : super(key: key);
 
   @override
-  _MobileAppPageState createState() => _MobileAppPageState();
+  _MobileFlutterPageState createState() => _MobileFlutterPageState();
 }
 
-class _MobileAppPageState extends State<MobileAppPage> {
+class _MobileFlutterPageState extends State<MobileFlutterPage> {
   final ScrollController scrollController = ScrollController();
 
   final controller = CarouselController();
@@ -25,14 +26,29 @@ class _MobileAppPageState extends State<MobileAppPage> {
   final img_pass = [
     'assets/app/other_game/pass.png',
     'assets/app/other_game/pass2.png',
+    'assets/app/other_game/pass3.png',
   ];
 
   @override
   Widget build(BuildContext context) {
+    const appStyle = TextStyle(
+      fontSize: 30,
+      fontWeight: FontWeight.bold,
+      color: Colors.red,
+      fontFamily: 'sawarabi',
+    );
+
+    const descriptionStyle = TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.w400,
+      color: Colors.red,
+      fontFamily: 'sawarabi',
+    );
+
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.black,
-        appBar: buildAppBar("アプリ"),
+        appBar: buildAppBar("開発言語-Flutter-"),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: SingleChildScrollView(
@@ -40,19 +56,6 @@ class _MobileAppPageState extends State<MobileAppPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const SizedBox(
-                  height: 40,
-                ),
-
-                buildAppURLButton(
-                    image: "assets/app/apps_icon/translation.png",
-                    appName: "翻訳アプリ\n(プレイストア)",
-                    onClick: translateAndroidURL,
-                    ios: false,
-                    apple: false,
-                    mobile: true,
-                    textColor: Colors.white),
-
                 const SizedBox(
                   height: 40,
                 ),
@@ -65,9 +68,9 @@ class _MobileAppPageState extends State<MobileAppPage> {
                       itemCount: img_trans.length,
                       options: CarouselOptions(
                           autoPlay: true,
-                          autoPlayCurve: Curves.easeInExpo,
                           aspectRatio: 2,
-                          autoPlayAnimationDuration: const Duration(seconds: 2),
+                          autoPlayCurve: Curves.easeInExpo,
+                          autoPlayAnimationDuration: const Duration(seconds: 3),
                           height: 270,
                           enlargeCenterPage: true,
                           enlargeStrategy: CenterPageEnlargeStrategy.height,
@@ -85,42 +88,40 @@ class _MobileAppPageState extends State<MobileAppPage> {
                   ],
                 ),
 
+                Text("翻訳アプリ", style: appStyle),
+
                 const SizedBox(
-                  height: 200,
+                  height: 40,
                 ),
 
-                buildAppURLButton(
-                    image: "assets/app/apps_icon/memo_logo.png",
-                    appName: "シンプルなメモ帳\n(プレイストア)",
-                    onClick: memoAndroidURL,
-                    ios: false,
-                    apple: false,
-                    mobile: true,
-                    textColor: Colors.white),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 48.0),
+                  child: Text("", style: descriptionStyle),
+                ),
+
                 const SizedBox(
                   height: 40,
                 ),
 
-                SizedBox(
-                    height: 270,
-                    child: Image.asset(
-                        height: 400, "assets/app/other_game/memo.png")),
-
-                const SizedBox(
-                  height: 200,
-                ),
-
-                buildAppURLButton(
-                    image: "assets/app/apps_icon/ps_logo.png",
-                    appName: "パスワード管理アプリ\n(プレイストア)",
-                    onClick: psportAndroidURL,
-                    ios: false,
-                    apple: false,
-                    mobile: true,
-                    textColor: Colors.white),
+                buildAppleStoreButton(onClick: transIOSURL),
 
                 const SizedBox(
                   height: 40,
+                ),
+
+                buildGooglePlayButton(onClick: translateAndroidURL),
+
+                const SizedBox(
+                  height: 100,
+                ),
+
+                Divider(
+                  thickness: 3,
+                  color: Colors.red,
+                ),
+
+                const SizedBox(
+                  height: 100,
                 ),
 
                 //画�?
@@ -133,7 +134,7 @@ class _MobileAppPageState extends State<MobileAppPage> {
                           autoPlay: true,
                           aspectRatio: 2,
                           autoPlayCurve: Curves.easeInExpo,
-                          autoPlayAnimationDuration: const Duration(seconds: 2),
+                          autoPlayAnimationDuration: const Duration(seconds: 3),
                           height: 270,
                           enlargeCenterPage: true,
                           enlargeStrategy: CenterPageEnlargeStrategy.height,
@@ -144,40 +145,36 @@ class _MobileAppPageState extends State<MobileAppPage> {
                             });
                           }),
                       itemBuilder: (ctx, index, realIndex) {
-                        final passImg = img_pass[index];
-                        return buildImage(passImg);
+                        final fpsImg = img_pass[index];
+                        return buildImage(fpsImg);
                       },
                     ),
                   ],
                 ),
 
-                const SizedBox(
-                  height: 200,
-                ),
-
-                //Ok Google kun android
-                buildAppURLButton(
-                    image: "assets/app/apps_icon/ai_g_logo.png",
-                    appName: "OK グーグル君\n(プレイストア)",
-                    onClick: okGoogleAndroidURL,
-                    ios: false,
-                    apple: false,
-                    mobile: true,
-                    textColor: Colors.white),
+                Text("パスワード管理アプリ", style: appStyle),
 
                 const SizedBox(
                   height: 40,
                 ),
 
-                //Ok Google kun android English
-                buildAppURLButton(
-                    image: "assets/app/apps_icon/ai_g_logo.png",
-                    appName: "OK グーグル君\n-英語版-",
-                    onClick: okGoogleEnglishAndroidURL,
-                    ios: false,
-                    apple: false,
-                    mobile: true,
-                    textColor: Colors.white),
+                Text("", style: descriptionStyle),
+
+                const SizedBox(
+                  height: 40,
+                ),
+
+                buildAppleStoreButton(onClick: psportIOSURL),
+
+                const SizedBox(
+                  height: 40,
+                ),
+
+                buildGooglePlayButton(onClick: psportAndroidURL),
+
+                const SizedBox(
+                  height: 40,
+                ),
 
                 const SizedBox(
                   height: 200,

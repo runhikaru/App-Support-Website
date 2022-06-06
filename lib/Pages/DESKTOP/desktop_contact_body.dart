@@ -59,12 +59,13 @@ class _DesktopContactBodyState extends State<DesktopContactBody> {
             key: widget.contactKey,
             width: double.infinity,
             height: 100,
-            color: Colors.white,
+            color: Colors.black,
             child: const Text(
               'CONTACT',
               style: TextStyle(
                 fontFamily: 'VujahdayScript',
                 fontSize: 80,
+                color: Colors.white,
               ),
             ),
           ),
@@ -140,7 +141,9 @@ class _DesktopContactBodyState extends State<DesktopContactBody> {
             ),
           ),
 
-          const SizedBox(height: 250,)
+          const SizedBox(
+            height: 250,
+          )
         ],
       ),
     );

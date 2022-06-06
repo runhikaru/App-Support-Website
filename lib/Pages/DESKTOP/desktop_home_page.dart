@@ -115,8 +115,8 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
     final currentWidth = MediaQuery.of(context).size.width;
     print(currentWidth);
     return Scaffold(
-      backgroundColor: Colors.black,
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 2, 136, 199),
         elevation: 25,
         automaticallyImplyLeading: false,
         title: const Text(
@@ -138,14 +138,6 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
                 offset: const Offset(0, 3), // changes position of shadow
               ),
             ],
-            gradient: const LinearGradient(
-              colors: [
-                Color.fromARGB(255, 24, 203, 247),
-                Color.fromARGB(255, 61, 1, 126),
-              ],
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-            ),
           ),
         ),
         actions: [
@@ -158,7 +150,7 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
               child: const Text(
                 "プライバシーポリシー",
                 style: TextStyle(
-                  color: Color.fromARGB(255, 107, 224, 253),
+                  color: Colors.white,
                 ),
               ))
         ],
@@ -252,13 +244,13 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
                             appName: "翻訳アプリ",
                             description: "11カ国語を同時翻訳"),
                         ScrollToItem(
-                            callback: scrollToItem9,
-                            appName: "メモ帳アプリ",
-                            description: "メモ"),
-                        ScrollToItem(
                             callback: scrollToItem13,
                             appName: "ID管理アプリ",
                             description: "仕事効率"),
+                            ScrollToItem(
+                            callback: scrollToItem9,
+                            appName: "メモ帳アプリ",
+                            description: "メモ"),
                         ScrollToItem(
                             callback: scrollToItem10,
                             appName: "Ok Google君",

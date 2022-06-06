@@ -52,11 +52,6 @@ const okGoogleAppAndroid =
 const okGoogleEnglishAppAndroid =
     'https://play.google.com/store/apps/details?id=com.genyosystem.variety_ai_english';
 
-// Google Drive----------------------------------------------------------------
-//ドット絵
-const dotSwordURL =
-    'https://drive.google.com/drive/folders/1vqYSh48ydlzINA5vslevIz2QraQe1krD?usp=sharing';
-
 // IOS App URL----------------------------------------------------------------
 //脱出ゲーム病院(IOS)
 const escHospitalAppIOS =
@@ -65,14 +60,34 @@ const escHospitalAppIOS =
 //フーマ
 const foomAppIOS = "https://apps.apple.com/us/app/モンスターフーマの冒険/id1625652187";
 
-//フーマ
+//Apek
 const apekAppIOS = "https://apps.apple.com/us/app/apek-legends/id1626107035";
 
+//翻訳
+const transAppIOS =
+    "https://apps.apple.com/us/app/多言語同時翻訳アプリ-コンパイル/id1627943798";
+
+//パスワード管理
+const psportAppIOS = "https://apps.apple.com/us/app/パスポータル/id1627944960";
+
 const desktopWidth = 800;
+
+const descriptionStyle = TextStyle(
+  fontSize: 20,
+  fontWeight: FontWeight.w400,
+  fontFamily: 'sawarabi',
+);
+
+const webDescriptionStyle = TextStyle(
+  fontSize: 30,
+  fontWeight: FontWeight.w400,
+  fontFamily: 'sawarabi',
+);
 
 AppBar buildAppBar(String title) {
   return AppBar(
     elevation: 25,
+    backgroundColor: Color.fromARGB(255, 2, 136, 199),
     title: Text(
       title,
       style: const TextStyle(
@@ -92,11 +107,14 @@ AppBar buildAppBar(String title) {
           offset: const Offset(0, 3), // changes position of shadow
         ),
       ],
-      gradient: const LinearGradient(
-        colors: [Color.fromRGBO(100, 232, 255, 1), Colors.deepPurple],
-        begin: Alignment.centerLeft,
-        end: Alignment.centerRight,
-      ),
+      // gradient: const LinearGradient(
+      //   colors: [
+      //     Color.fromARGB(255, 2, 136, 199),
+      //     Color.fromARGB(255, 2, 136, 199),
+      //   ],
+      //   begin: Alignment.centerLeft,
+      //   end: Alignment.centerRight,
+      // ),
     )),
   );
 }
@@ -111,157 +129,85 @@ Widget buildImage(String imageName) {
   );
 }
 
-Widget buildAppURLButton(
-        {required String image,
-        required String appName,
-        required Function onClick,
-        required bool ios,
-        required bool apple,
-        required bool mobile,
-        required Color textColor}) =>
-    mobile
-        ? GestureDetector(
+Widget buildGooglePlayButton({
+  required Function onClick,
+}) =>
+    Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: [
+            BoxShadow(
+              color: Color.fromARGB(255, 236, 173, 102).withOpacity(.5),
+              spreadRadius: 5,
+              blurRadius: 7,
+              offset: const Offset(0, 0), // changes position of shadow
+            ),
+          ],
+        ),
+        width: 200,
+        child: GestureDetector(
             onTap: () {
               onClick();
             },
-            child: SizedBox(
-              height: 80,
-              width: 550,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: ios
-                          ? Color.fromARGB(255, 107, 224, 253).withOpacity(.5)
-                          : Color.fromARGB(255, 236, 173, 102).withOpacity(.5),
-                      spreadRadius: 5,
-                      blurRadius: 7,
-                      offset: const Offset(0, 3), // changes position of shadow
-                    ),
-                  ],
-                  gradient: LinearGradient(
-                    colors: ios
-                        ? [
-                            Color.fromARGB(255, 24, 203, 247),
-                            Color.fromARGB(255, 3, 64, 231),
-                          ]
-                        : [
-                            Color.fromARGB(255, 21, 218, 119),
-                            Color.fromARGB(255, 219, 125, 11),
-                          ],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 7.0),
-                  child: Row(
-                    children: [
-                      ClipRRect(
-                        borderRadius: apple
-                            ? BorderRadius.circular(10.0)
-                            : BorderRadius.circular(40.0),
-                        child: Image.asset(
-                          image,
-                          fit: BoxFit.cover,
-                          width: 60,
-                          height: 60,
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      RichText(
-                        text: TextSpan(
-                            text: appName,
-                            style: TextStyle(
-                                fontFamily: "kaisei",
-                                color: textColor,
-                                fontSize: 18,
-                                decoration: TextDecoration.underline)),
-                      )
-                    ],
-                  ),
-                ),
-              ),
+            child: Image.asset("assets/app/play_store.png")));
+
+Widget buildAppleStoreButton({
+  required Function onClick,
+}) =>
+    Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: [
+            BoxShadow(
+              color: Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
+              spreadRadius: 5,
+              blurRadius: 7,
+              offset: const Offset(0, 0), // changes position of shadow
             ),
-          )
-        : Padding(
-            padding: const EdgeInsets.only(top: 20),
-            child: OnHoverWidget(
-              child: GestureDetector(
-                onTap: () {
-                  onClick();
-                },
-                child: SizedBox(
-                  height: 80,
-                  width: 550,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
-                        BoxShadow(
-                          color: ios
-                              ? Color.fromARGB(255, 107, 224, 253)
-                                  .withOpacity(.5)
-                              : Color.fromARGB(255, 236, 173, 102)
-                                  .withOpacity(.5),
-                          spreadRadius: 5,
-                          blurRadius: 7,
-                          offset:
-                              const Offset(0, 3), // changes position of shadow
-                        ),
-                      ],
-                      gradient: LinearGradient(
-                        colors: ios
-                            ? [
-                                Color.fromARGB(255, 24, 203, 247),
-                                Color.fromARGB(255, 3, 64, 231),
-                              ]
-                            : [
-                                Color.fromARGB(255, 21, 218, 119),
-                                Color.fromARGB(255, 219, 125, 11),
-                              ],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 7.0),
-                      child: Row(
-                        children: [
-                          ClipRRect(
-                            borderRadius: apple
-                                ? BorderRadius.circular(10.0)
-                                : BorderRadius.circular(40.0),
-                            child: Image.asset(
-                              image,
-                              fit: BoxFit.cover,
-                              width: 60,
-                              height: 60,
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          RichText(
-                            text: TextSpan(
-                                text: appName,
-                                style: TextStyle(
-                                    fontFamily: "kaisei",
-                                    color: textColor,
-                                    fontSize: 28,
-                                    decoration: TextDecoration.underline)),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          );
+          ],
+        ),
+        width: 200,
+        child: GestureDetector(
+            onTap: () {
+              onClick();
+            },
+            child: Image.asset("assets/app/apple_store.png")));
+
+Widget buildAppName({required String appName, required bool isWeb}) =>
+    Container(
+      width: 360,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: [
+          BoxShadow(
+            color: Color.fromARGB(255, 107, 224, 253).withOpacity(.5),
+            spreadRadius: 5,
+            blurRadius: 7,
+            offset: const Offset(0, 3), // changes position of shadow
+          ),
+        ],
+        gradient: LinearGradient(
+          colors: [
+            Color.fromARGB(255, 24, 203, 247),
+            Color.fromARGB(255, 3, 64, 231),
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+      ),
+      child: Align(
+        alignment: Alignment.center,
+        child: Text(
+          appName,
+          style: TextStyle(
+            fontSize: isWeb ? 40 : 30,
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'sawarabi',
+          ),
+        ),
+      ),
+    );
 
 // Android Game App----------------------------------------------------------------
 Future<void> apekAndroidURL() async => await canLaunch(apekApp)
@@ -292,11 +238,6 @@ Future<void> ozisanAndroidURL() async => await canLaunch(ozisanAppAndroid)
 Future<void> stackBallAndroidURL() async => await canLaunch(stackBallAppAndroid)
     ? await launch(stackBallAppAndroid)
     : throw 'Could not launch $stackBallAppAndroid';
-
-// Google Drive----------------------------------------------------------------
-Future<void> dotURL() async => await canLaunch(dotSwordURL)
-    ? await launch(dotSwordURL)
-    : throw 'Could not launch $dotSwordURL';
 
 // Android Flutter App----------------------------------------------------------------
 Future<void> translateAndroidURL() async => await canLaunch(translateAppAndroid)
@@ -332,3 +273,11 @@ Future<void> foomIOSURL() async => await canLaunch(foomAppIOS)
 Future<void> apekIOSURL() async => await canLaunch(apekAppIOS)
     ? await launch(apekAppIOS)
     : throw 'Could not launch $apekAppIOS';
+
+Future<void> transIOSURL() async => await canLaunch(transAppIOS)
+    ? await launch(transAppIOS)
+    : throw 'Could not launch $transAppIOS';
+
+Future<void> psportIOSURL() async => await canLaunch(psportAppIOS)
+    ? await launch(psportAppIOS)
+    : throw 'Could not launch $psportAppIOS';

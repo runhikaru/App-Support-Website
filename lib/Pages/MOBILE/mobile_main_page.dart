@@ -1,7 +1,5 @@
-import 'package:app_support_website/Pages/MOBILE/mobile_app_page.dart';
-import 'package:app_support_website/Pages/MOBILE/mobile_fps_game_page.dart';
-import 'package:app_support_website/Pages/MOBILE/mobile_min_game_page.dart';
-import 'package:app_support_website/Pages/MOBILE/mobile_popular_game_page.dart';
+import 'package:app_support_website/Pages/MOBILE/mobile_flutter_page.dart';
+import 'package:app_support_website/Pages/MOBILE/mobile_unity_page.dart';
 import 'package:app_support_website/Pages/MOBILE/mobile_service_page.dart';
 import 'package:app_support_website/utils.dart';
 import 'package:flutter/material.dart';
@@ -53,10 +51,7 @@ class _MobileMainPageState extends State<MobileMainPage> {
             print(isOpened);
             drawerOpened = isOpened;
           });
-
-          ;
         }),
-        backgroundColor: Colors.black,
 
         //AppBar
         appBar: buildAppBar("サービス"),
@@ -115,76 +110,42 @@ class _MobileMainPageState extends State<MobileMainPage> {
                   ),
                   onTap: () {
                     Get.to(() => const MobileContactPage(),
-                        transition: Transition.zoom);
+                        transition: Transition.size,
+                        duration: const Duration(milliseconds: 1500));
                   },
                 ),
-                // const Divider(
-                //   color: Colors.white,
-                //   height: 1,
-                //   thickness: 1,
+                // const Padding(
+                //   padding: EdgeInsets.all(6.0),
+                //   child: Text(
+                //     'アプリの詳細',
+                //     style: styleSubTitle,
+                //   ),
                 // ),
-                const Padding(
-                  padding: EdgeInsets.all(6.0),
-                  child: Text(
-                    'アプリの詳細',
-                    style: styleSubTitle,
-                  ),
-                ),
-                ListTile(
-                  leading:
-                      const Icon(Icons.videogame_asset, color: Colors.white),
-                  title: const Text(
-                    '人気',
-                    style: drawerStyle,
-                  ),
-                  onTap: () {
-                    Get.to(() => const MobilePopularGamePage(),
-                        transition: Transition.size,
-                        duration: const Duration(milliseconds: 1500));
-                  },
-                ),
-                ListTile(
-                  leading:
-                      const Icon(Icons.sports_esports, color: Colors.white),
-                  title: const Text(
-                    'FPSゲーム',
-                    style: drawerStyle,
-                  ),
-                  onTap: () {
-                    Get.to(() => const MobileFPSGamePage(),
-                        transition: Transition.size,
-                        duration: const Duration(milliseconds: 1500));
-                  },
-                ),
-                ListTile(
-                  leading: const Icon(Icons.games, color: Colors.white),
-                  title: const Text(
-                    'ミニゲーム',
-                    style: drawerStyle,
-                  ),
-                  onTap: () {
-                    Get.to(() => const MobileMinGamePage(),
-                        transition: Transition.size,
-                        duration: const Duration(milliseconds: 1500));
-                  },
-                ),
-                ListTile(
-                  leading:
-                      const Icon(Icons.phone_iphone_sharp, color: Colors.white),
-                  title: const Text(
-                    'アプリケーション',
-                    style: drawerStyle,
-                  ),
-                  onTap: () {
-                    Get.to(() => const MobileAppPage(),
-                        transition: Transition.size,
-                        duration: const Duration(milliseconds: 1500));
-                  },
-                ),
-                // const Divider(
-                //   color: Colors.white,
-                //   height: 1,
-                //   thickness: 1,
+                // ListTile(
+                //   leading:
+                //       const Icon(Icons.videogame_asset, color: Colors.white),
+                //   title: const Text(
+                //     'Unity',
+                //     style: drawerStyle,
+                //   ),
+                //   onTap: () {
+                //     Get.to(() => const MobileUnityPage(),
+                //         transition: Transition.size,
+                //         duration: const Duration(milliseconds: 1500));
+                //   },
+                // ),
+                // ListTile(
+                //   leading:
+                //       const Icon(Icons.sports_esports, color: Colors.white),
+                //   title: const Text(
+                //     'Flutter',
+                //     style: drawerStyle,
+                //   ),
+                //   onTap: () {
+                //     Get.to(() => const MobileFlutterPage(),
+                //         transition: Transition.size,
+                //         duration: const Duration(milliseconds: 1500));
+                //   },
                 // ),
                 const Padding(
                   padding: EdgeInsets.all(6.0),

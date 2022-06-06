@@ -47,7 +47,6 @@ class _MobileContactPageState extends State<MobileContactPage> {
         onTap: () => FocusScope.of(context).unfocus(),
         child: SafeArea(
           child: Scaffold(
-            backgroundColor: Colors.black,
             appBar: buildAppBar("お問い合わせ"),
             body: Form(
               key: _formKey,
@@ -56,7 +55,7 @@ class _MobileContactPageState extends State<MobileContactPage> {
                   const Center(
                     child: SelectableText(
                       "mizuno.hikaru.01@gmail.com",
-                      style: TextStyle(color: Colors.white, fontSize: 23),
+                      style: TextStyle(fontSize: 23),
                     ),
                   ),
                   SlidingSheet(
@@ -75,7 +74,7 @@ class _MobileContactPageState extends State<MobileContactPage> {
                         ),
                         child: Column(
                           children: [
-                             const SizedBox(height:70),
+                            const SizedBox(height: 70),
                             // Mail
                             buildTextField(
                                 title: 'お名前',
@@ -150,7 +149,7 @@ class _MobileContactPageState extends State<MobileContactPage> {
                                   ),
                                 )),
 
-                                const SizedBox(height:70)
+                            const SizedBox(height: 70)
                           ],
                         ),
                       );
@@ -242,7 +241,9 @@ class _MobileContactPageState extends State<MobileContactPage> {
                       fontWeight: FontWeight.bold,
                       fontSize: 18)),
             ])),
-            const SizedBox(height: 10,),
+            const SizedBox(
+              height: 10,
+            ),
             TextFormField(
               autofocus: true,
               validator: (value) {
@@ -297,7 +298,9 @@ class _MobileContactPageState extends State<MobileContactPage> {
                       fontWeight: FontWeight.bold,
                       fontSize: 18)),
             ])),
-             const SizedBox(height: 10,),
+            const SizedBox(
+              height: 10,
+            ),
             TextFormField(
               controller: controller,
               decoration: InputDecoration(
@@ -354,7 +357,9 @@ class _MobileContactPageState extends State<MobileContactPage> {
                       fontWeight: FontWeight.bold,
                       fontSize: 18)),
             ])),
-             const SizedBox(height: 10,),
+            const SizedBox(
+              height: 10,
+            ),
             TextFormField(
                 controller: controller,
                 maxLines: maxLines,

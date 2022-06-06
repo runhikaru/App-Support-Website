@@ -46,25 +46,26 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
 
   final controller2 = CarouselController();
   int activeIndex2 = 0;
+  final img_kouya = [
+    'assets/app/kouya_app/kouya1.png',
+    'assets/app/kouya_app/kouya2.png',
+    'assets/app/kouya_app/kouya3.png',
+  ];
+
+  final controller3 = CarouselController();
+  int activeIndex3 = 0;
   final img_trans = [
     'assets/app/other_game/trans.png',
     'assets/app/other_game/trans1.png',
     'assets/app/other_game/trans2.png',
   ];
 
-  final controller3 = CarouselController();
-  int activeIndex3 = 0;
-  final img_psport = [
-    'assets/app/other_game/pass.png',
-    'assets/app/other_game/pass2.png',
-  ];
-
   final controller4 = CarouselController();
   int activeIndex4 = 0;
-  final img_kouya = [
-    'assets/app/kouya_app/kouya1.png',
-    'assets/app/kouya_app/kouya2.png',
-    'assets/app/kouya_app/kouya3.png',
+  final img_pass = [
+    'assets/app/other_game/pass.png',
+    'assets/app/other_game/pass2.png',
+    'assets/app/other_game/pass3.png',
   ];
 
   //hover
@@ -127,10 +128,14 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
           key: widget.serviceKey,
           width: double.infinity,
           height: 100,
-          color: Colors.white,
+          color: Colors.black,
           child: const Text(
             'SERVICE',
-            style: TextStyle(fontFamily: 'VujahdayScript', fontSize: 80),
+            style: TextStyle(
+              fontFamily: 'VujahdayScript',
+              fontSize: 80,
+              color: Colors.white,
+            ),
           ),
         ),
 
@@ -139,7 +144,9 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
         const Text(
           "システム開発",
           style: TextStyle(
-              fontSize: 40, color: Colors.white, fontFamily: "sawarabi"),
+              fontSize: 60,
+              fontFamily: "sawarabi",
+              fontWeight: FontWeight.bold),
         ),
 
         //Youtube Ad Block Youtube
@@ -172,9 +179,9 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
                         horizontal: 40, vertical: 40),
                     decoration: BoxDecoration(
                       borderRadius: border!,
-                      color: Colors.white.withOpacity(0.3),
+                      color: Colors.black.withOpacity(0.3),
                       border: Border.all(
-                        color: Colors.white.withOpacity(0.7),
+                        color: Colors.black.withOpacity(0.7),
                       ),
                     ),
                     child: AnimatedOpacity(
@@ -217,37 +224,13 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
           child: const Text(
             "ゲーム開発",
             style: TextStyle(
-                fontSize: 40, color: Colors.white, fontFamily: "sawarabi"),
+                fontSize: 60,
+                fontFamily: "sawarabi",
+                fontWeight: FontWeight.bold),
           ),
         ),
 
         const SizedBox(height: 100),
-
-        buildAppURLButton(
-            image: "assets/app/apek_app/apek_logo.png",
-            appName: "Apek Legends(Apple Store)",
-            onClick: apekIOSURL,
-            ios: true,
-            apple: true,
-            mobile: false,
-            textColor: Colors.white),
-
-        const SizedBox(
-          height: 60,
-        ),
-
-        buildAppURLButton(
-            image: "assets/app/apek_app/apek_logo.png",
-            appName: "Apek Legends(プレイストア)",
-            onClick: apekAndroidURL,
-            ios: false,
-            apple: false,
-            mobile: false,
-            textColor: Colors.white),
-
-        const SizedBox(
-          height: 60,
-        ),
 
         //Apek Image
         Stack(
@@ -277,178 +260,186 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
           ],
         ),
 
+        buildAppName(appName: "Apek Legends Mobile", isWeb: false),
+
         const SizedBox(
-          height: 250,
+          height: 60,
         ),
 
-        Container(
-          key: widget.fpsKey,
-          child: buildAppURLButton(
-              image: "assets/app/apps_icon/fps_logo.png",
-              appName: "荒野運動(プレイストア)",
-              onClick: apekAndroidURL,
-              ios: false,
-              apple: false,
-              mobile: false,
-              textColor: Colors.white),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 48.0),
+          child: Text(
+              "渾身の技術を詰め込んだFPSゲーム！\n舞台は、中世ヨーロッパの城。\nロシアとベルギーのユーザーによくダウンロードされています。",
+              style: webDescriptionStyle),
         ),
 
         const SizedBox(
           height: 60,
+        ),
+
+        buildAppleStoreButton(onClick: apekIOSURL),
+
+        const SizedBox(
+          height: 60,
+        ),
+
+        buildGooglePlayButton(onClick: apekAndroidURL),
+
+        const SizedBox(
+          height: 250,
         ),
 
         //荒野 Image
-        Stack(
-          children: [
-            CarouselSlider.builder(
-              carouselController: controller4,
-              itemCount: img_kouya.length,
-              options: CarouselOptions(
-                  autoPlay: true,
-                  aspectRatio: 2,
-                  autoPlayCurve: Curves.easeInExpo,
-                  autoPlayAnimationDuration: const Duration(seconds: 2),
-                  height: 400,
-                  enlargeCenterPage: true,
-                  enlargeStrategy: CenterPageEnlargeStrategy.height,
-                  reverse: false,
-                  onPageChanged: (index, reason) {
-                    setState(() {
-                      activeIndex4 = index;
-                    });
-                  }),
-              itemBuilder: (ctx, index, realIndex) {
-                final kouyaImg = img_kouya[index];
-                return buildImage(kouyaImg);
-              },
-            ),
-          ],
+        Container(
+          key: widget.fpsKey,
+          child: Stack(
+            children: [
+              CarouselSlider.builder(
+                carouselController: controller4,
+                itemCount: img_kouya.length,
+                options: CarouselOptions(
+                    autoPlay: true,
+                    aspectRatio: 2,
+                    autoPlayCurve: Curves.easeInExpo,
+                    autoPlayAnimationDuration: const Duration(seconds: 2),
+                    height: 400,
+                    enlargeCenterPage: true,
+                    enlargeStrategy: CenterPageEnlargeStrategy.height,
+                    reverse: false,
+                    onPageChanged: (index, reason) {
+                      setState(() {
+                        activeIndex4 = index;
+                      });
+                    }),
+                itemBuilder: (ctx, index, realIndex) {
+                  final kouyaImg = img_kouya[index];
+                  return buildImage(kouyaImg);
+                },
+              ),
+            ],
+          ),
         ),
+
+        buildAppName(appName: "荒野運動", isWeb: false),
+
+        const SizedBox(
+          height: 60,
+        ),
+
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 48.0),
+          child: Text("空中移動も自由自在！\nロボットの操縦や個性的な武器の数々！\n廃城で敵を殲滅せよ",
+              style: webDescriptionStyle),
+        ),
+
+        const SizedBox(
+          height: 60,
+        ),
+
+        buildGooglePlayButton(onClick: fpsAndroidURL),
 
         const SizedBox(
           height: 250,
         ),
 
-        Text("ダウンロード数 1位",
-            style: TextStyle(
-                color: Color.fromARGB(255, 255, 236, 23),
-                fontWeight: FontWeight.bold,
-                fontSize: 50,
-                fontFamily: "sawarabi")),
-
-        const SizedBox(
-          height: 60,
-        ),
-
-        Container(
-          key: widget.escHospitalKey,
-          child: buildAppURLButton(
-              image: "assets/app/apps_icon/esc_hospital_logo.png",
-              appName: "脱出ゲーム -廃病院-(Apple Store)",
-              onClick: escHospitalIOSURL,
-              ios: true,
-              apple: true,
-              mobile: false,
-              textColor: Colors.white),
-        ),
-
-        const SizedBox(
-          height: 60,
-        ),
-
-        buildAppURLButton(
-            image: "assets/app/apps_icon/esc_hospital_logo.png",
-            appName: "脱出ゲーム -廃病院-(プレイストア)",
-            onClick: escHospitalAndroidURL,
-            ios: false,
-            apple: false,
-            mobile: false,
-            textColor: Colors.white),
-
-        const SizedBox(
-          height: 60,
-        ),
-
         // 廃病院 Image
-        SizedBox(
+        Container(
+            key: widget.escHospitalKey,
             height: 400,
             child: Image.asset("assets/app/other_game/escHospital.png")),
 
         const SizedBox(
-          height: 250,
+          height: 60,
         ),
 
-        Container(
-          key: widget.escSchoolKey,
-          child: buildAppURLButton(
-              image: "assets/app/apps_icon/esc_logo.png",
-              appName: "脱出ゲーム -学校-(プレイストア)",
-              onClick: escSchoolAndroidURL,
-              ios: false,
-              apple: false,
-              mobile: false,
-              textColor: Colors.white),
+        buildAppName(appName: "脱出ゲーム-廃病院-", isWeb: false),
+
+        const SizedBox(
+          height: 60,
+        ),
+
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 48.0),
+          child:
+              Text("ダウンロード数3000突破！\n廃墟の精神病院からの脱出ゲーム！", style: webDescriptionStyle),
         ),
 
         const SizedBox(
           height: 60,
         ),
 
+        buildAppleStoreButton(onClick: escHospitalIOSURL),
+
+        const SizedBox(
+          height: 60,
+        ),
+
+        buildGooglePlayButton(onClick: escHospitalAndroidURL),
+
+        const SizedBox(
+          height: 250,
+        ),
+
         // 学校 Image
-        SizedBox(
+        Container(
+            key: widget.escSchoolKey,
             height: 400,
             child: Image.asset("assets/app/other_game/escSchool.png")),
+
+        const SizedBox(
+          height: 60,
+        ),
+
+        buildAppName(appName: "脱出ゲーム-学校-", isWeb: false),
+
+        const SizedBox(
+          height: 60,
+        ),
+
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 48.0),
+          child: Text("ダウンロード数1000突破！\n学校からの脱出ゲーム！", style: webDescriptionStyle),
+        ),
+
+        const SizedBox(
+          height: 60,
+        ),
+
+        buildGooglePlayButton(onClick: escSchoolAndroidURL),
 
         const SizedBox(height: 250),
 
         Container(
-          key: widget.otherGameAppKey,
-          child: buildAppURLButton(
-              image: "assets/app/apps_icon/foom_logo.png",
-              appName: "フーマの大冒険(Apple Store)",
-              onClick: foomIOSURL,
-              ios: true,
-              apple: true,
-              mobile: false,
-              textColor: Colors.white),
+            key: widget.otherGameAppKey,
+            height: 400,
+            child: Image.asset("assets/app/other_game/foom.png")),
+
+        const SizedBox(
+          height: 60,
+        ),
+
+        buildAppName(appName: "モンスターフーマの冒険", isWeb: false),
+
+        const SizedBox(
+          height: 60,
+        ),
+
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 48.0),
+          child: Text("ふざけたゲームです。", style: webDescriptionStyle),
         ),
 
         const SizedBox(
           height: 60,
         ),
 
-        buildAppURLButton(
-            image: "assets/app/apps_icon/foom_logo.png",
-            appName: "フーマの大冒険(プレイストア)",
-            onClick: foomAndroidURL,
-            ios: false,
-            apple: false,
-            mobile: false,
-            textColor: Colors.white),
+        buildAppleStoreButton(onClick: foomIOSURL),
 
         const SizedBox(
           height: 60,
         ),
 
-        buildAppURLButton(
-            image: "assets/app/apps_icon/ozisan.png",
-            appName: "おじさんで積み木(プレイストア)",
-            onClick: ozisanAndroidURL,
-            ios: false,
-            apple: false,
-            mobile: false,
-            textColor: Colors.white),
-
-        const SizedBox(height: 60),
-
-        buildAppURLButton(
-            image: "assets/app/apps_icon/hcasual.png",
-            appName: "スタックボール(プレイストア)",
-            onClick: stackBallAndroidURL,
-            ios: false,
-            apple: false,
-            mobile: false,
-            textColor: Colors.white),
+        buildGooglePlayButton(onClick: foomAndroidURL),
 
         const SizedBox(height: 250),
 
@@ -457,23 +448,13 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
           child: const Text(
             "アプリ開発",
             style: TextStyle(
-                fontSize: 40, color: Colors.white, fontFamily: "sawarabi"),
+                fontSize: 60,
+                fontFamily: "sawarabi",
+                fontWeight: FontWeight.bold),
           ),
         ),
 
         const SizedBox(height: 100),
-
-        //翻訳アプリ androi
-        buildAppURLButton(
-            image: "assets/app/apps_icon/translation.png",
-            appName: "翻訳アプリ(プレイストア)",
-            onClick: translateAndroidURL,
-            ios: false,
-            apple: false,
-            mobile: false,
-            textColor: Colors.white),
-
-        const SizedBox(height: 60),
 
         //Translation Image
         Stack(
@@ -503,97 +484,119 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
           ],
         ),
 
-        const SizedBox(height: 250),
+        buildAppName(appName: "翻訳アプリ", isWeb: false),
 
-        Container(
-          key: widget.memoKey,
-          child: buildAppURLButton(
-              image: "assets/app/apps_icon/memo_logo.png",
-              appName: "メモ帳アプリ(プレイストア)",
-              onClick: memoAndroidURL,
-              ios: false,
-              apple: false,
-              mobile: false,
-              textColor: Colors.white),
+        const SizedBox(
+          height: 60,
         ),
 
-        const SizedBox(height: 60),
-
-        SizedBox(
-            height: 400, child: Image.asset("assets/app/other_game/memo.png")),
-
-        const SizedBox(height: 250),
-
-        Container(
-          key: widget.idKey,
-          child: buildAppURLButton(
-              image: "assets/app/apps_icon/ps_logo.png",
-              appName: "パスワード管理(プレイストア)",
-              onClick: psportAndroidURL,
-              ios: false,
-              apple: false,
-              mobile: false,
-              textColor: Colors.white),
-        ),
-
-        const SizedBox(height: 60),
-
-        //Ps Port Image
-        Stack(
-          children: [
-            CarouselSlider.builder(
-              carouselController: controller3,
-              itemCount: img_psport.length,
-              options: CarouselOptions(
-                  autoPlay: true,
-                  aspectRatio: 2,
-                  autoPlayCurve: Curves.easeInExpo,
-                  autoPlayAnimationDuration: const Duration(seconds: 2),
-                  height: 400,
-                  enlargeCenterPage: true,
-                  enlargeStrategy: CenterPageEnlargeStrategy.height,
-                  reverse: false,
-                  onPageChanged: (index, reason) {
-                    setState(() {
-                      activeIndex3 = index;
-                    });
-                  }),
-              itemBuilder: (ctx, index, realIndex) {
-                final psportImg = img_psport[index];
-                return buildImage(psportImg);
-              },
-            ),
-          ],
-        ),
-
-        const SizedBox(height: 250),
-
-        //鄙ｻ險ｳ繧｢繝励Μ androi
-        Container(
-          key: widget.okgoogleKey,
-          child: buildAppURLButton(
-              image: "assets/app/apps_icon/ai_g_logo.png",
-              appName: "Ok Googleさん(プレイストア)",
-              onClick: okGoogleAndroidURL,
-              ios: false,
-              apple: false,
-              mobile: false,
-              textColor: Colors.white),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 48.0),
+          child: Text("11ヶ国語を一度に翻訳し、発音も聞けるアプリです。", style: webDescriptionStyle),
         ),
 
         const SizedBox(
           height: 60,
         ),
 
-        //Ok Google kun androi English
-        buildAppURLButton(
-            image: "assets/app/apps_icon/ai_g_logo.png",
-            appName: "OK Google -English版-",
-            onClick: okGoogleEnglishAndroidURL,
-            ios: false,
-            apple: false,
-            mobile: false,
-            textColor: Colors.white),
+        buildAppleStoreButton(onClick: transIOSURL),
+
+        const SizedBox(
+          height: 60,
+        ),
+
+        buildGooglePlayButton(onClick: translateAndroidURL),
+
+        const SizedBox(height: 250),
+
+        //画象
+        Container(
+          key: widget.idKey,
+          child: Stack(
+            children: [
+              CarouselSlider.builder(
+                carouselController: controller2,
+                itemCount: img_pass.length,
+                options: CarouselOptions(
+                    autoPlay: true,
+                    aspectRatio: 2,
+                    autoPlayCurve: Curves.easeInExpo,
+                    autoPlayAnimationDuration: const Duration(seconds: 3),
+                    // height: 270,
+                    enlargeCenterPage: true,
+                    enlargeStrategy: CenterPageEnlargeStrategy.height,
+                    reverse: false,
+                    onPageChanged: (index, reason) {
+                      setState(() {
+                        activeIndex2 = index;
+                      });
+                    }),
+                itemBuilder: (ctx, index, realIndex) {
+                  final fpsImg = img_pass[index];
+                  return buildImage(fpsImg);
+                },
+              ),
+            ],
+          ),
+        ),
+
+        buildAppName(appName: "パスワード管理アプリ", isWeb: false),
+
+        const SizedBox(
+          height: 60,
+        ),
+
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 48.0),
+          child: Text("増えたログインIDやパスワードをメモ！\nコピペで使うことができるアプリです。",
+              style: webDescriptionStyle),
+        ),
+
+        const SizedBox(
+          height: 60,
+        ),
+
+        buildAppleStoreButton(onClick: psportIOSURL),
+
+        const SizedBox(
+          height: 60,
+        ),
+
+        buildGooglePlayButton(onClick: psportAndroidURL),
+
+        const SizedBox(height: 250),
+
+        Container(
+            key: widget.memoKey,
+            height: 400,
+            child: Image.asset("assets/app/other_game/memo.png")),
+
+        const SizedBox(
+          height: 60,
+        ),
+
+        buildAppName(appName: "シンプルなメモ帳", isWeb: false),
+
+        const SizedBox(
+          height: 60,
+        ),
+
+        buildGooglePlayButton(onClick: memoAndroidURL),
+
+        const SizedBox(height: 250),
+
+        Container(
+            key: widget.okgoogleKey,
+            child: buildAppName(appName: "Ok Googleくん", isWeb: false)),
+
+        const SizedBox(
+          height: 60,
+        ),
+
+        //Ok Google kun androi
+        buildGooglePlayButton(onClick: okGoogleAndroidURL),
+
+        const SizedBox(height: 200),
 
         const SizedBox(height: 250),
       ],

@@ -21,12 +21,13 @@ class _DesktopDeveloperBodyState extends State<DesktopDeveloperBody> {
           key: widget.developerKey,
           width: double.infinity,
           height: 100,
-          color: Colors.white,
+          color: Colors.black,
           child: const Text(
             'DEVELOPER',
             style: TextStyle(
               fontFamily: 'VujahdayScript',
               fontSize: 80,
+              color: Colors.white,
             ),
           ),
         ),
@@ -53,7 +54,7 @@ class _DesktopDeveloperBodyState extends State<DesktopDeveloperBody> {
 
         const SizedBox(height: 100),
         const Divider(
-          color: Colors.white,
+          color: Colors.black,
           thickness: 2,
         ),
         Align(
@@ -62,7 +63,7 @@ class _DesktopDeveloperBodyState extends State<DesktopDeveloperBody> {
               padding: const EdgeInsets.symmetric(vertical: 20.0),
               child: Text("(c) 2021 MHikaru inc.",
                   style: TextStyle(
-                      fontSize: 13, color: Colors.white.withOpacity(0.5))),
+                      fontSize: 13, color: Colors.black.withOpacity(0.5))),
             ))
       ],
     );
@@ -75,9 +76,9 @@ class _DesktopDeveloperBodyState extends State<DesktopDeveloperBody> {
         height: 160,
         width: 300,
         decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.3),
+          color: Colors.black.withOpacity(0.3),
           border: Border.all(
-            color: Colors.white.withOpacity(0.7),
+            color: Colors.black.withOpacity(0.7),
           ),
           borderRadius: BorderRadius.circular(10),
         ),
@@ -86,13 +87,13 @@ class _DesktopDeveloperBodyState extends State<DesktopDeveloperBody> {
           children: [
             Text(
               title,
-              style: const TextStyle(color: Colors.white54, fontSize: 20),
+              style: const TextStyle(color: Colors.black54, fontSize: 20),
             ),
             Text(
               description,
               style: const TextStyle(
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 28),
             ),
           ],
