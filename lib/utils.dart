@@ -121,7 +121,7 @@ AppBar buildAppBar(String title) {
 
 Widget buildImage(String imageName) {
   return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 14.0),
+    padding: const EdgeInsets.symmetric(horizontal: 14.0,vertical: 20),
     child: Image.asset(
       imageName,
       fit: BoxFit.contain,
