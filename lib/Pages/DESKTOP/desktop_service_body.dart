@@ -260,7 +260,7 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
           ],
         ),
 
-        buildAppName(appName: "Apek Legends Mobile", isWeb: false),
+        buildAppName(appName: "Apek Legends Mobile", isWeb: true),
 
         const SizedBox(
           height: 60,
@@ -320,7 +320,7 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
           ),
         ),
 
-        buildAppName(appName: "荒野運動", isWeb: false),
+        buildAppName(appName: "荒野運動", isWeb: true),
 
         const SizedBox(
           height: 60,
@@ -390,7 +390,7 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
           height: 60,
         ),
 
-        buildAppName(appName: "脱出ゲーム-学校-", isWeb: false),
+        buildAppName(appName: "脱出ゲーム-学校-", isWeb: true),
 
         const SizedBox(
           height: 60,
@@ -418,7 +418,7 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
           height: 60,
         ),
 
-        buildAppName(appName: "モンスターフーマの冒険", isWeb: false),
+        buildAppName(appName: "モンスターフーマの冒険", isWeb: true),
 
         const SizedBox(
           height: 60,
@@ -484,7 +484,7 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
           ],
         ),
 
-        buildAppName(appName: "翻訳アプリ", isWeb: false),
+        buildAppName(appName: "翻訳アプリ", isWeb: true),
 
         const SizedBox(
           height: 60,
@@ -540,7 +540,7 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
           ),
         ),
 
-        buildAppName(appName: "パスワード管理アプリ", isWeb: false),
+        buildAppName(appName: "パスワード管理アプリ", isWeb: true),
 
         const SizedBox(
           height: 60,
@@ -575,7 +575,7 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
           height: 60,
         ),
 
-        buildAppName(appName: "シンプルなメモ帳", isWeb: false),
+        buildAppName(appName: "シンプルなメモ帳", isWeb: true),
 
         const SizedBox(
           height: 60,
@@ -587,7 +587,7 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
 
         Container(
             key: widget.okgoogleKey,
-            child: buildAppName(appName: "Ok Googleくん", isWeb: false)),
+            child: buildAppName(appName: "Ok Googleくん", isWeb: true)),
 
         const SizedBox(
           height: 60,

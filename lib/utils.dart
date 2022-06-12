@@ -70,6 +70,10 @@ const transAppIOS =
 //パスワード管理
 const psportAppIOS = "https://apps.apple.com/us/app/パスポータル/id1627944960";
 
+//脱出ゲームPC(IOS)
+const escPCAppIOS =
+    "https://apps.apple.com/us/app/%E8%84%B1%E5%87%BA%E3%82%B2%E3%83%BC%E3%83%A0-%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3%E3%81%8B%E3%82%89%E3%81%AE%E8%84%B1%E5%87%BA-%E5%BA%8F%E7%AB%A0/id1628900903";
+
 const desktopWidth = 800;
 
 const descriptionStyle = TextStyle(
@@ -121,7 +125,7 @@ AppBar buildAppBar(String title) {
 
 Widget buildImage(String imageName) {
   return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 14.0,vertical: 20),
+    padding: const EdgeInsets.symmetric(horizontal: 14.0, vertical: 20),
     child: Image.asset(
       imageName,
       fit: BoxFit.contain,
@@ -200,7 +204,7 @@ Widget buildAppName({required String appName, required bool isWeb}) =>
         child: Text(
           appName,
           style: TextStyle(
-            fontSize: isWeb ? 40 : 30,
+            fontSize: isWeb ? 32 : 25,
             color: Colors.white,
             fontWeight: FontWeight.bold,
             fontFamily: 'sawarabi',
@@ -281,3 +285,7 @@ Future<void> transIOSURL() async => await canLaunch(transAppIOS)
 Future<void> psportIOSURL() async => await canLaunch(psportAppIOS)
     ? await launch(psportAppIOS)
     : throw 'Could not launch $psportAppIOS';
+
+Future<void> escPCtIOSURL() async => await canLaunch(escPCAppIOS)
+    ? await launch(escPCAppIOS)
+    : throw 'Could not launch $escPCAppIOS';

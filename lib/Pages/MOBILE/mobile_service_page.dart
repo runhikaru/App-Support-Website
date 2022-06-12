@@ -173,7 +173,7 @@ class _MobileServicePageState extends State<MobileServicePage> {
               ],
             ),
 
-            buildAppName(appName: "Apek Legends Mobile", isWeb: true),
+            buildAppName(appName: "Apek Legends Mobile", isWeb: false),
 
             const SizedBox(
               height: 40,
@@ -239,7 +239,7 @@ class _MobileServicePageState extends State<MobileServicePage> {
               ],
             ),
 
-            buildAppName(appName: "荒野運動", isWeb: true),
+            buildAppName(appName: "荒野運動", isWeb: false),
 
             const SizedBox(
               height: 40,
@@ -278,7 +278,7 @@ class _MobileServicePageState extends State<MobileServicePage> {
               height: 40,
             ),
 
-            buildAppName(appName: "脱出ゲーム-廃病院-", isWeb: true),
+            buildAppName(appName: "脱出ゲーム-廃病院-", isWeb: false),
 
             const SizedBox(
               height: 40,
@@ -314,6 +314,45 @@ class _MobileServicePageState extends State<MobileServicePage> {
             const SizedBox(
               height: 100,
             ),
+
+            SizedBox(
+                height: 270,
+                child: Image.asset("assets/app/other_game/escPc.png")),
+
+            const SizedBox(
+              height: 40,
+            ),
+
+            buildAppName(appName: "脱出ゲーム-パソコンからの脱出-", isWeb: false),
+
+            const SizedBox(
+              height: 40,
+            ),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 48.0),
+              child: Text("パソコンの中に閉じ込められるというSF的、脱出ゲーム",
+                  style: descriptionStyle),
+            ),
+
+            const SizedBox(
+              height: 40,
+            ),
+
+            buildAppleStoreButton(onClick: escPCtIOSURL),
+
+            const SizedBox(
+              height: 100,
+            ),
+
+            Divider(
+              thickness: 2,
+              color: Colors.black26,
+            ),
+
+            const SizedBox(
+              height: 100,
+            ),
             SizedBox(
                 height: 270,
                 child: Image.asset("assets/app/other_game/escSchool.png")),
@@ -322,7 +361,7 @@ class _MobileServicePageState extends State<MobileServicePage> {
               height: 40,
             ),
 
-            buildAppName(appName: "脱出ゲーム-学校-", isWeb: true),
+            buildAppName(appName: "脱出ゲーム-学校-", isWeb: false),
 
             const SizedBox(
               height: 40,
@@ -361,7 +400,7 @@ class _MobileServicePageState extends State<MobileServicePage> {
               height: 40,
             ),
 
-            buildAppName(appName: "モンスターフーマの冒険", isWeb: true),
+            buildAppName(appName: "モンスターフーマの冒険", isWeb: false),
 
             const SizedBox(
               height: 40,
@@ -441,7 +480,7 @@ class _MobileServicePageState extends State<MobileServicePage> {
               ],
             ),
 
-            buildAppName(appName: "翻訳アプリ", isWeb: true),
+            buildAppName(appName: "翻訳アプリ", isWeb: false),
 
             const SizedBox(
               height: 40,
@@ -505,7 +544,7 @@ class _MobileServicePageState extends State<MobileServicePage> {
               ],
             ),
 
-            buildAppName(appName: "パスワード管理アプリ", isWeb: true),
+            buildAppName(appName: "パスワード管理アプリ", isWeb: false),
 
             const SizedBox(
               height: 40,
@@ -550,7 +589,7 @@ class _MobileServicePageState extends State<MobileServicePage> {
               height: 40,
             ),
 
-            buildAppName(appName: "シンプルなメモ帳", isWeb: true),
+            buildAppName(appName: "シンプルなメモ帳", isWeb: false),
 
             const SizedBox(
               height: 40,
@@ -571,7 +610,7 @@ class _MobileServicePageState extends State<MobileServicePage> {
               height: 100,
             ),
 
-            buildAppName(appName: "Ok Googleくん", isWeb: true),
+            buildAppName(appName: "Ok Googleくん", isWeb: false),
 
             const SizedBox(
               height: 40,
