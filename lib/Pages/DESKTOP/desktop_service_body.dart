@@ -50,6 +50,7 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
     'assets/app/kouya_app/kouya1.png',
     'assets/app/kouya_app/kouya2.png',
     'assets/app/kouya_app/kouya3.png',
+    'assets/app/kouya_app/kouya4.png',
   ];
 
   final controller3 = CarouselController();
@@ -360,8 +361,47 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
 
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 48.0),
-          child:
-              Text("ダウンロード数3000突破！\n廃墟の精神病院からの脱出ゲーム！", style: webDescriptionStyle),
+          child: Text("ダウンロード数3000突破！\n廃墟の精神病院からの脱出ゲーム！",
+              style: webDescriptionStyle),
+        ),
+
+        const SizedBox(
+          height: 60,
+        ),
+
+        buildAppleStoreButton(onClick: escHospitalIOSURL),
+
+        const SizedBox(
+          height: 60,
+        ),
+
+        buildGooglePlayButton(onClick: escHospitalAndroidURL),
+
+        const SizedBox(
+          height: 250,
+        ),
+
+        // PC
+        Container(
+            // key: widget.escHospitalKey,
+            height: 400,
+            child: Image.asset("assets/app/other_game/escPc.png")),
+
+        const SizedBox(
+          height: 60,
+        ),
+
+        buildAppName(appName: "脱出ゲーム-パソコン-", isWeb: false),
+
+        const SizedBox(
+          height: 60,
+        ),
+
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 48.0),
+          child: Text(
+              "パソコンの中に閉じ込められる！？\nデータには、被験体となってる自分が！\n偶然か？故意か？自分は何者なのか....\nSF的な脱出ゲーム",
+              style: webDescriptionStyle),
         ),
 
         const SizedBox(
@@ -398,7 +438,8 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
 
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 48.0),
-          child: Text("ダウンロード数1000突破！\n学校からの脱出ゲーム！", style: webDescriptionStyle),
+          child:
+              Text("ダウンロード数1000突破！\n学校からの脱出ゲーム！", style: webDescriptionStyle),
         ),
 
         const SizedBox(

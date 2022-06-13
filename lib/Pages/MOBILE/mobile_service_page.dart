@@ -41,6 +41,7 @@ class _MobileServicePageState extends State<MobileServicePage> {
     'assets/app/kouya_app/kouya1.png',
     'assets/app/kouya_app/kouya2.png',
     'assets/app/kouya_app/kouya3.png',
+    'assets/app/kouya_app/kouya4.png',
   ];
 
   final controller3 = CarouselController();
@@ -286,7 +287,7 @@ class _MobileServicePageState extends State<MobileServicePage> {
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 48.0),
-              child: Text("ダウンロード数3000突破！\n廃墟の精神病院からの脱出ゲーム！",
+              child: Text("ダウンロード数3000突破！\n無料アプリランキング最高16位。\n廃墟の精神病院からの脱出ゲーム！",
                   style: descriptionStyle),
             ),
 
@@ -323,7 +324,7 @@ class _MobileServicePageState extends State<MobileServicePage> {
               height: 40,
             ),
 
-            buildAppName(appName: "脱出ゲーム-パソコンからの脱出-", isWeb: false),
+            buildAppName(appName: "脱出ゲーム-パソコン-", isWeb: false),
 
             const SizedBox(
               height: 40,
@@ -331,8 +332,8 @@ class _MobileServicePageState extends State<MobileServicePage> {
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 48.0),
-              child: Text("パソコンの中に閉じ込められるというSF的、脱出ゲーム",
-                  style: descriptionStyle),
+              child:
+                  Text("パソコンの中に閉じ込められるというSF的、脱出ゲーム", style: descriptionStyle),
             ),
 
             const SizedBox(
@@ -340,6 +341,12 @@ class _MobileServicePageState extends State<MobileServicePage> {
             ),
 
             buildAppleStoreButton(onClick: escPCtIOSURL),
+
+            const SizedBox(
+              height: 40,
+            ),
+
+            buildGooglePlayButton(onClick: escPCAndroidURL),
 
             const SizedBox(
               height: 100,

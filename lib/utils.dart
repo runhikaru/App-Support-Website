@@ -24,6 +24,10 @@ const escSchoolAppAndroid =
 const escHospitalAppAndroid =
     "https://play.google.com/store/apps/details?id=com.GenyoSystem.eschorror";
 
+//脱出ゲーム-PC
+const escPcAppAndroid =
+    "https://play.google.com/store/apps/details?id=com.GenyoSystem.escPc";
+
 //スタックボール
 const stackBallAppAndroid =
     'https://play.google.com/store/apps/details?id=com.Genyosystem.game';
@@ -264,6 +268,10 @@ Future<void> memoAndroidURL() async => await canLaunch(memoAppAndroid)
 Future<void> psportAndroidURL() async => await canLaunch(psportAppAndroid)
     ? await launch(psportAppAndroid)
     : throw 'Could not launch $psportAppAndroid';
+
+Future<void> escPCAndroidURL() async => await canLaunch(escPcAppAndroid)
+    ? await launch(escPcAppAndroid)
+    : throw 'Could not launch $escPcAppAndroid';
 
 // IOS Game App----------------------------------------------------------------
 Future<void> escHospitalIOSURL() async => await canLaunch(escHospitalAppIOS)
