@@ -256,6 +256,12 @@ class _MobileServicePageState extends State<MobileServicePage> {
               height: 40,
             ),
 
+            buildAppleStoreButton(onClick: kouyaIOSURL),
+
+            const SizedBox(
+              height: 40,
+            ),
+
             buildGooglePlayButton(onClick: fpsAndroidURL),
 
             const SizedBox(

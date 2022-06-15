@@ -1,4 +1,4 @@
-//掲示板　app
+
 import 'package:app_support_website/Widget/on_hover_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -8,7 +8,7 @@ import 'package:url_launcher/url_launcher.dart';
 const apekApp =
     "https://play.google.com/store/apps/details?id=com.Genyosystem.val";
 
-//FPSアプリ(Android)
+//荒野アプリ(Android)
 const fpsAppAndroid =
     "https://play.google.com/store/apps/details?id=com.genyosystem.kouyakoudou";
 
@@ -77,6 +77,10 @@ const psportAppIOS = "https://apps.apple.com/us/app/パスポータル/id1627944
 //脱出ゲームPC(IOS)
 const escPCAppIOS =
     "https://apps.apple.com/us/app/%E8%84%B1%E5%87%BA%E3%82%B2%E3%83%BC%E3%83%A0-%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3%E3%81%8B%E3%82%89%E3%81%AE%E8%84%B1%E5%87%BA-%E5%BA%8F%E7%AB%A0/id1628900903";
+
+//荒野アプリ(Android)
+const kouyaAppIOS =
+    "https://apps.apple.com/us/app/%E8%8D%92%E9%87%8E%E8%A1%8C%E7%A8%8B/id1627283140";
 
 const desktopWidth = 800;
 
@@ -297,3 +301,7 @@ Future<void> psportIOSURL() async => await canLaunch(psportAppIOS)
 Future<void> escPCtIOSURL() async => await canLaunch(escPCAppIOS)
     ? await launch(escPCAppIOS)
     : throw 'Could not launch $escPCAppIOS';
+
+Future<void> kouyaIOSURL() async => await canLaunch(kouyaAppIOS)
+    ? await launch(kouyaAppIOS)
+    : throw 'Could not launch $kouyaAppIOS';

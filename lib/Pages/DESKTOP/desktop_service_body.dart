@@ -337,6 +337,12 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
           height: 60,
         ),
 
+        buildAppleStoreButton(onClick: kouyaIOSURL),
+
+        const SizedBox(
+          height: 60,
+        ),
+
         buildGooglePlayButton(onClick: fpsAndroidURL),
 
         const SizedBox(
