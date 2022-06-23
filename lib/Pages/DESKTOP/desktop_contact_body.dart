@@ -52,7 +52,7 @@ class _DesktopContactBodyState extends State<DesktopContactBody> {
     return Form(
       key: _formKey,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           //contact
           Container(
@@ -197,7 +197,6 @@ class _DesktopContactBodyState extends State<DesktopContactBody> {
               TextSpan(
                   text: title,
                   style: const TextStyle(
-                      color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 28)),
             ])),
@@ -258,7 +257,6 @@ class _DesktopContactBodyState extends State<DesktopContactBody> {
                   text: title,
                   style: const TextStyle(
                       fontFamily: "sawarabi",
-                      color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 28)),
             ])),
@@ -320,7 +318,6 @@ class _DesktopContactBodyState extends State<DesktopContactBody> {
                   text: title,
                   style: const TextStyle(
                       fontFamily: "sawarabi",
-                      color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 28)),
             ])),

@@ -122,7 +122,7 @@ class _DesktopServiceBodyState extends State<DesktopServiceBody> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         //Service
         Container(
