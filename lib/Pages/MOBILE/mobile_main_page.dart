@@ -1,5 +1,3 @@
-import 'package:app_support_website/Pages/MOBILE/mobile_flutter_page.dart';
-import 'package:app_support_website/Pages/MOBILE/mobile_unity_page.dart';
 import 'package:app_support_website/Pages/MOBILE/mobile_service_page.dart';
 import 'package:app_support_website/utils.dart';
 import 'package:flutter/material.dart';

@@ -39,7 +39,7 @@ class _MobileContactPageState extends State<MobileContactPage> {
         forwardAnimationCurve: Curves.elasticInOut,
         reverseAnimationCurve: Curves.easeInOutBack,
         backgroundColor: Colors.white.withOpacity(0.6),
-        animationDuration: const Duration(seconds: 5));
+        animationDuration: const Duration(seconds: 10));
   }
 
   @override

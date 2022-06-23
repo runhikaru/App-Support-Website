@@ -1,11 +1,11 @@
 {
-    "name": "アプリサポートサイト",
-    "short_name": "サポートサイト",
+    "name": "元昜ホームページ",
+    "short_name": "我々について",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "アプリについてのサポートやプライバシーポリシーを確認できます",
+    "description": "当サイトでは、『最強のコンテンツを作る』をビジョンとし、『ゲームアプリ・スマホアプリ・Webの企画・開発・運営』を行なっております。",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
